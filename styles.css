@@ -162,30 +162,7 @@ html{
 }
 
 
-header, section, footer{
-    padding-inline: 10vw;
-
-}
 
 
 
-/*  MEDIA RESPONSIVENESS  */
 
-/*  TABLETS  */
-
-@media(max-width:51rem) {
-    html{
-        font-size: 50%;
-
-    }
-}
-
-
-/* MOBILE LANDSCAPE */
-
-@media(max-width:43rem) {
-    html{
-        font-size: 43.75%;
-        
-    }
-}
