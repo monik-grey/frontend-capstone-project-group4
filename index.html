@@ -1,25 +1,249 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-        name="description"
-        content="Explore the planets in our solar system and discover fascinating facts/data about the eight planets in our solar system."
-    >
-    <meta name="author" content="Group-4">
+      name="description"
+      content="Explore the planets in our solar system and discover fascinating facts/data about the eight planets in our solar system." />
+    <meta name="author" content="Group-4" />
     <title>Planet | Group 4 Capstone Project</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
-    
-</head>
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet" />
+  </head>
 
-<body>
-    
-</body>
+  <body>
+    <!-- Header Start -->
+    <header>
+      <a href="/" aria-label="Planet, home">
+        <img
+          src="images/logo-black.svg"
+          alt="Planet logo"
+          width="121"
+          height="52" />
+      </a>
+      <button type="button" aria-pressed="false">
+        Dark
+        <span>
+          <img
+            src="images/theme-icon.svg"
+            alt="moon icon"
+            width="20"
+            height="20" />
+        </span>
+      </button>
+    </header>
+
+    <!-- Main Content Start -->
+    <main>
+      <!-- Search Form -->
+      <form role="search" action="" method="get">
+        <!-- NB: Add search icon with CSS or JS-->
+        <input
+          id="planet-search"
+          name="search"
+          type="search"
+          placeholder="Search planet name" />
+        <button type="submit">Search</button>
+      </form>
+
+      <!-- Planet Profile Start -->
+      <article aria-labelledby="planet-name">
+        <img
+          src="images/image26.svg"
+          alt="Cenematics earth img"
+          width="117"
+          height="117" />
+        <header>
+          <h1 id="planet-name">Earth</h1>
+          <p>Terrestrial</p>
+        </header>
+
+        <p>
+          The only known planet to support life, with liquid water on its
+          surface.
+        </p>
+
+        <!-- Planet Details -->
+        <dl>
+          <div>
+            <dt>Gravity</dt>
+            <dd>9.8</dd>
+          </div>
+          <div>
+            <dt>Mass</dt>
+            <dd>0.00315</dd>
+          </div>
+          <div>
+            <dt>Period</dt>
+            <dd>365</dd>
+          </div>
+        </dl>
+
+        <!-- Planet Details with Icons -->
+        <dl>
+          <div>
+            <dt aria-label="Temperature">
+              <img
+                src="images/temperature-icon.svg"
+                alt="Temperature icon"
+                width="20"
+                height="20" />
+            </dt>
+            <dd>288</dd>
+          </div>
+          <div>
+            <dt aria-label="Moons">
+              <img
+                src="images/half-moon-icon.svg"
+                alt="Moons icon"
+                width="20"
+                height="20" />
+            </dt>
+            <dd>1</dd>
+          </div>
+          <div>
+            <dt aria-label="Diameter">
+              <img
+                src="images/diameter-icon.svg"
+                alt="Diameter icon"
+                width="20"
+                height="20" />
+            </dt>
+            <dd>12756</dd>
+          </div>
+          <div>
+            <dt aria-label="Distance from Sun">
+              <img
+                src="images/gear-icon.svg"
+                alt="Distance from Sun icon"
+                width="20"
+                height="20" />
+            </dt>
+            <dd>149.6</dd>
+          </div>
+        </dl>
+      </article>
+      <!-- Planet Profile End -->
+
+      <!-- Planetary Facts Section-->
+      <section aria-labelledby="facts-heading">
+        <h2 id="facts-heading">Planetary Facts at a Glance</h2>
+        <p>
+          Below is a comparative table of major planets in our solar system. The
+          data highlights key physical properties used by astronomers and
+          researchers worldwide.
+        </p>
+
+        <!--Table-->
+        <table>
+          <caption>
+            Data about the planets of our solar system (Planetary facts taken
+            from NASA)
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col" colspan="2"><span>Classification</span></th>
+              <th scope="col">Name</th>
+              <th scope="col">Mass (10<sup>24</sup>&nbsp;kg)</th>
+              <th scope="col">Diameter (km)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="rowgroup" colspan="2" rowspan="4">
+                Terrestrial Planets
+              </th>
+              <th scope="row">Mercury</th>
+              <td>0.330</td>
+              <td>4,878</td>
+            </tr>
+            <tr>
+              <th scope="row">Venus</th>
+              <td>0.330</td>
+              <td>4,878</td>
+            </tr>
+            <tr>
+              <th scope="row">Earth</th>
+              <td>0.330</td>
+              <td>4,878</td>
+            </tr>
+            <tr>
+              <th scope="row">Mars</th>
+              <td>0.330</td>
+              <td>4,878</td>
+            </tr>
+            <tr>
+              <th scope="rowgroup" rowspan="4">Jovian Planets</th>
+              <th scope="rowgroup" rowspan="2">Gas Giants</th>
+              <th scope="row">Jupiter</th>
+              <td>0.330</td>
+              <td>4,878</td>
+            </tr>
+            <tr>
+              <th scope="row">Saturn</th>
+              <td>0.330</td>
+              <td>4,878</td>
+            </tr>
+            <tr>
+              <th scope="rowgroup" rowspan="2">Ice Giants</th>
+              <th scope="row">Uranus</th>
+              <td>0.330</td>
+              <td>4,878</td>
+            </tr>
+            <tr>
+              <th scope="row">Neptune</th>
+              <td>0.330</td>
+              <td>4,878</td>
+            </tr>
+            <tr>
+              <th scope="rowgroup" colspan="2">Dwarf Planets</th>
+              <th scope="row">Pluto</th>
+              <td>0.330</td>
+              <td>4,878</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!--footer-->
+    <footer>
+      <section aria-labelledby="about-heading">
+        <h3 id="about-heading">About</h3>
+        <div>
+          <p>
+            <a href="https://github.com/monik-grey" target="_blank">Osamede</a>
+          </p>
+          <p>
+            <a href="https://github.com/barristerInTech" target="_blank"
+              >Joshua</a
+            >
+          </p>
+          <p>
+            <a href="https://github.com/crown-great02" target="_blank"
+              >Adeoluwa</a
+            >
+          </p>
+          <p>
+            <a href="https://github.com/thelma-dot88" target="_blank">Thelma</a>
+          </p>
+          <p>
+            <a href="https://github.com/Badboyvado" target="_blank">Habeeb</a>
+          </p>
+        </div>
+      </section>
+      <p>
+        <small>
+          &copy;2026 Design by Amaka N<br />
+          Built by Group Four. All rights reserved<br />
+          TSAcademy
+        </small>
+      </p>
+    </footer>
+  </body>
 </html>
-
