@@ -161,6 +161,62 @@ html{
     font-family: "DM Serif Display", serif;
 }
 
+/* =========================
+   PAGE FOUNDATION
+   ========================= */
+
+   body {
+    min-height: 100vh;
+    background-color: var(--backgroundwhite);
+    color: var(--black);
+        }
+
+
+/* =========================
+   MAIN HEADER
+   ========================= */
+
+  body > header {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+                }
+   body > header > a {
+    display: block;
+        }
+
+  body > header > a img {
+    width: 121px;
+    height: auto;
+        }
+
+
+/* Dark mode button */
+
+  body > header > button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+    color: var(--black);
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+        }
+
+    body > header > button img {
+            width: 20px;
+            height: 20px;
+                }
+
 
 
 
