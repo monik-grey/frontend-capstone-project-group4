@@ -464,6 +464,7 @@ html{
     font-family: "Karla", sans-serif;
     font-size: 16px;
     line-height: 1.5;
+   } 
 
    
 /* =========================
@@ -538,8 +539,7 @@ html{
    main > section > table tbody tr:last-child td {
     border-bottom: 0;
 }
-  } 
-  
+    
   
 /* =========================
    FOOTER
