@@ -161,8 +161,381 @@ html{
     font-family: "DM Serif Display", serif;
 }
 
+/* =========================
+   PAGE FOUNDATION
+   ========================= */
+
+   body {
+    min-height: 100vh;
+    background-color: var(--backgroundwhite);
+    color: var(--black);
+        }
 
 
+/* =========================
+   MAIN HEADER
+   ========================= */
+
+  body > header {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+                }
+   body > header > a {
+    display: block;
+        }
+
+  body > header > a img {
+    width: 121px;
+    height: auto;
+        }
 
 
+/* Dark mode button */
 
+  body > header > button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+    color: var(--black);
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+        }
+
+    body > header > button img {
+            width: 20px;
+            height: 20px;
+                }
+            
+/* =========================
+   SEARCH FORM
+   ========================= */
+
+  form[role="search"] {
+    width: 100%;
+    max-width: 730px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+            }
+
+
+/* Search input */
+
+  #planet-search {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+   
+    border: 1px solid var(--brightblue);
+    border-radius: 4px;
+
+    background-color: var(--white);
+    color: var(--black);
+
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    outline: none;
+        }
+
+  #planet-search::placeholder {
+    color: var(--black);
+    opacity: 0.6;
+        }
+
+/* Search button */
+    form[role="search"] button {
+    padding: 14px 24px;
+
+    border: 0;
+    border-radius: 4px;
+    
+    background-color: var(--searchblue);
+    color: var(--white);
+
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+          }
+
+
+/* =========================
+   PLANET PROFILE
+   ========================= */
+
+   main > article {
+    width: 100%;
+    max-width: 730px;
+    margin: 40px auto 0;
+
+    padding: 40px;
+
+    background-color: var(--white);
+    border-radius: 8px;
+
+    display: grid;
+    grid-template-columns: 117px 1fr;
+    column-gap: 32px;
+    row-gap: 24px;
+        }
+
+
+/* Planet image */
+
+  main > article > img {
+    width: 117px;
+    height: 117px;
+    align-self: center;
+        }
+
+
+/* Planet name and type */
+  main > article > header {
+    align-self: center;
+        }
+
+  main > article > header h1 {
+    color: var(--black);
+    font-size: 48px;
+    line-height: 1.1;
+        }
+
+  main > article > header p {
+    margin-top: 8px;
+
+    color: var(--darkblue);
+
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+        }
+
+
+/* Planet description */
+
+  main > article > p {
+    grid-column: 1 / -1;
+
+    color: var(--black);
+
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+        }
+
+       
+ /* =========================
+   PLANET PRIMARY STATS
+   ========================= */
+
+   main > article > dl:first-of-type {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--brightblue);
+    border-bottom: 1px solid var(--brightblue);
+        }
+
+
+  main > article > dl:first-of-type > div {
+    padding: 20px 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    text-align: center;
+        }
+
+
+  main > article > dl:first-of-type > div + div {
+    border-left: 1px solid var(--brightblue);
+        }
+
+
+  main > article > dl:first-of-type dt {
+    color: var(--black);
+
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+        }
+
+
+  main > article > dl:first-of-type dd {
+    color: var(--darkblue);
+
+    font-family: "Karla", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+         }
+        
+ 
+/* =========================
+   PLANET ICON STATS
+   ========================= */
+
+  main > article > dl:nth-of-type(2) {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+        }
+
+
+  main > article > dl:nth-of-type(2) > div {
+    min-width: 0;
+
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    text-align: center 
+         }
+
+
+  main > article > dl:nth-of-type(2) dt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+
+    background-color: var(--brightblue);
+        }
+
+
+  main > article > dl:nth-of-type(2) dt img {
+    width: 20px;
+    height: 20px;
+    }
+
+
+  main > article > dl:nth-of-type(2) dd {
+    color: var(--black);
+
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+        }
+/* =========================
+   PLANETARY FACTS SECTION
+   ========================= */
+
+  main > section {
+    width: 100%;
+    max-width: 730px;
+    margin: 64px auto 0;
+         }
+
+  main > section > h2 {
+    color: var(--black);
+    font-size: 36px;
+    line-height: 1.2;
+        }
+
+  main > section > p {
+    max-width: 650px;
+    margin-top: 12px;
+    color: var(--black);
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+
+   
+/* =========================
+   PLANETARY FACTS TABLE
+   ========================= */
+
+ main > section > table {
+    width: 100%;
+    margin-top: 32px;
+    
+    background-color: var(--white);
+    border: 1px solid var(--brightblue);
+    border-radius: 8px;
+    
+    overflow: hidden;
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+        }
+
+
+ main > section > table caption {
+    margin-bottom: 12px;
+
+    color: var(--captionblue);
+
+    font-size: 12px;
+    text-align: left;
+    }
+
+
+/* Table cells */
+
+ main > section > table th,
+  main > section > table td {
+    padding: 14px 16px;
+
+    border-bottom: 1px solid var(--brightblue);
+
+    text-align: left;
+    vertical-align: middle;
+        }
+
+/* Table header */
+
+  main > section > table thead {
+    background-color: var(--brightblue);
+        }
+
+  main > section > table thead th {
+    color: var(--black);
+
+    font-weight: 700;
+        }
+
+
+/* Table body */
+
+  main > section > table tbody th {
+    color: var(--black);
+    font-weight: 700;
+  }               
+
+
+  main > section > table tbody td {
+    color: var(--black);
+        }
+
+
+/* Remove the final bottom border */
+
+  main > section > table tbody tr:last-child th,
+   main > section > table tbody tr:last-child td {
+    border-bottom: 0;
+}
+  } 
