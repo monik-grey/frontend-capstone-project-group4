@@ -441,4 +441,101 @@ html{
     font-size: 18px;
     font-weight: 700;
         }
-        
+/* =========================
+   PLANETARY FACTS SECTION
+   ========================= */
+
+  main > section {
+    width: 100%;
+    max-width: 730px;
+    margin: 64px auto 0;
+         }
+
+  main > section > h2 {
+    color: var(--black);
+    font-size: 36px;
+    line-height: 1.2;
+        }
+
+  main > section > p {
+    max-width: 650px;
+    margin-top: 12px;
+    color: var(--black);
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+
+   
+/* =========================
+   PLANETARY FACTS TABLE
+   ========================= */
+
+ main > section > table {
+    width: 100%;
+    margin-top: 32px;
+    
+    background-color: var(--white);
+    border: 1px solid var(--brightblue);
+    border-radius: 8px;
+    
+    overflow: hidden;
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+        }
+
+
+ main > section > table caption {
+    margin-bottom: 12px;
+
+    color: var(--captionblue);
+
+    font-size: 12px;
+    text-align: left;
+    }
+
+
+/* Table cells */
+
+ main > section > table th,
+  main > section > table td {
+    padding: 14px 16px;
+
+    border-bottom: 1px solid var(--brightblue);
+
+    text-align: left;
+    vertical-align: middle;
+        }
+
+/* Table header */
+
+  main > section > table thead {
+    background-color: var(--brightblue);
+        }
+
+  main > section > table thead th {
+    color: var(--black);
+
+    font-weight: 700;
+        }
+
+
+/* Table body */
+
+  main > section > table tbody th {
+    color: var(--black);
+    font-weight: 700;
+  }               
+
+
+  main > section > table tbody td {
+    color: var(--black);
+        }
+
+
+/* Remove the final bottom border */
+
+  main > section > table tbody tr:last-child th,
+   main > section > table tbody tr:last-child td {
+    border-bottom: 0;
+}
+  } 
