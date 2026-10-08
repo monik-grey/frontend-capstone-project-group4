@@ -539,3 +539,108 @@ html{
     border-bottom: 0;
 }
   } 
+  
+  
+/* =========================
+   FOOTER
+   ========================= */
+
+  body > footer {
+    width: 100%;
+    max-width: 730px;
+    margin: 80px auto 0;
+    padding: 48px 0 32px;
+
+    border-top: 1px solid var(--brightblue);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+
+    font-family: "Karla", sans-serif;
+         }
+
+
+/* About section */
+
+   body > footer > section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+        }
+
+
+   body > footer > section h3 {
+    color: var(--black);
+
+    font-family: "DM Serif Display", serif;
+    font-size: 24px;
+    line-height: 1.2;
+        }
+
+
+  body > footer > section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+
+    list-style: none;
+        }
+
+
+   body > footer > section li {
+    margin: 0;
+        }
+
+
+   body > footer > section a {
+    color: var(--darkblue);
+                            
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+            }
+
+
+/* =========================
+   FOOTER COPYRIGHT & CREDITS
+   ========================= */
+
+  body > footer > p {
+    max-width: 280px;
+
+    color: var(--black);
+
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+        }
+
+  body > footer > p small {
+    font-size: inherit;
+        }
+
+  body > footer > p small br {
+    display: block;
+    content: "";
+    margin-bottom: 4px;
+        }
+
+    
+/* =========================
+   FOOTER LINK INTERACTIONS
+   ========================= */
+
+   body > footer a:hover {
+    color: var(--searchblue);
+    text-decoration: underline;
+        }
+
+   body > footer a:focus-visible {
+    outline: 2px solid var(--searchblue);
+    outline-offset: 4px;
+    border-radius: 2px;
+        }
