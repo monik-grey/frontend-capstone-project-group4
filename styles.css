@@ -351,6 +351,64 @@ html{
     border-bottom: 1px solid var(--brightblue);
         }
 
+@media (max-width: 768px) {
+
+    header {
+        width: min(100% - 30px, 700px);
+        padding: 20px 0;
+    }
+
+    main {
+        width: min(100% - 30px, 700px);
+    }
+
+    main > article {
+        padding: 25px;
+
+        grid-template-columns: 110px 1fr;
+        column-gap: 25px;
+    }
+
+    main > article > img {
+        width: 95px;
+        height: 95px;
+    }
+
+    main > article > dl:first-of-type {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main > article > dl:first-of-type > div {
+        padding: 15px;
+    }
+
+    main > article > dl:last-of-type {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 15px;
+    }
+
+    main > article > dl:last-of-type > div:nth-child(2) {
+        border-right: none;
+    }
+
+    main > article > dl:last-of-type > div:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--light-border);
+        padding-bottom: 15px;
+    }
+
+    body.dark-mode main > article > dl:last-of-type > div:nth-child(-n + 2) {
+        border-bottom-color: #34445c;
+    }
+
+    footer {
+        padding: 35px 25px;
+        flex-direction: column;
+    }
+
+    footer > p {
+        text-align: left;
+    }
+    }
 
   main > article > dl:first-of-type > div {
     padding: 20px 16px;
