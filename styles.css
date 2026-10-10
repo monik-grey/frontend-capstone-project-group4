@@ -131,15 +131,14 @@ padding is optional but i do this because of lists*/ /* (not Ade) */
 
 /*MY CSS*/
 /* Was for the person that created the file */
- :root{
-    
-    --darkblue:rgba(22, 75, 175, 1);
-    --brightblue:rgba(209, 227, 255, 1);
-    --white:rgba(255, 255, 255, 1);
-    --captionblue:rgba(22, 75, 175, 1);
-    --searchblue:rgba(0, 121, 255, 1);
-    --backgroundwhite:rgb(246, 248, 255);
-    --black:rgba(43, 52, 66, 1); 
+:root {
+  --darkblue: rgba(22, 75, 175, 1);
+  --brightblue: rgba(209, 227, 255, 1);
+  --white: rgba(255, 255, 255, 1);
+  --captionblue: rgba(22, 75, 175, 1);
+  --searchblue: rgba(0, 121, 255, 1);
+  --backgroundwhite: rgb(246, 248, 255);
+  --black: rgba(43, 52, 66, 1);
 }
 
 /* (not Ade) */
@@ -156,40 +155,40 @@ html {
    PAGE FOUNDATION
    ========================= */
 
-   body {
-    min-height: 100vh;
-    background-color: var(--backgroundwhite);
-    color: var(--black);
-        }
+body {
+  min-height: 100vh;
+  background-color: var(--backgroundwhite);
+  color: var(--black);
+}
 
-  /* Table colors */
-  --th-bg: #164baf;
-  --th-text: #ffffff;
-  --tr-sub-bg: #d1e3ff;
-  --tr-border: #d1e3ff;
+/* Table colors */
+--th-bg: #164baf;
+--th-text: #ffffff;
+--tr-sub-bg: #d1e3ff;
+--tr-border: #d1e3ff;
 
 /* =========================
    MAIN HEADER
    ========================= */
 
-  body > header {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 32px 40px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-                }
-   body > header > a {
-    display: block;
-        }
+body > header {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 40px;
 
-  body > header > a img {
-    width: 121px;
-    height: auto;
-        }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body > header > a {
+  display: block;
+}
+
+body > header > a img {
+  width: 121px;
+  height: auto;
+}
 
 /* Dark Theme overrides */
 [data-theme="dark"] {
@@ -205,568 +204,538 @@ html {
 
 /* Dark mode button */
 
-  body > header > button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    border: 0;
-    background: transparent;
-    color: var(--black);
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    cursor: pointer;
-        }
+body > header > button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--black);
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 
-    body > header > button img {
-            width: 20px;
-            height: 20px;
-                }
-            
+body > header > button img {
+  width: 20px;
+  height: 20px;
+}
+
 /* =========================
    SEARCH FORM
    ========================= */
 
-  form[role="search"] {
-    width: 100%;
-    max-width: 730px;
-    margin: 0 auto;
-    display: flex;
-    align-items: stretch;
-    gap: 10px;
-            }
-
+form[role="search"] {
+  width: 100%;
+  max-width: 730px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
 
 /* Search input */
 
-  #planet-search {
-    flex: 1;
-    min-width: 0;
-    padding: 14px 16px;
-   
-    border: 1px solid var(--brightblue);
-    border-radius: 4px;
+#planet-search {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
 
-    background-color: var(--white);
-    color: var(--black);
+  border: 1px solid var(--brightblue);
+  border-radius: 4px;
 
-    font-family: "Karla", sans-serif;
-    font-size: 16px;
-    outline: none;
-        }
+  background-color: var(--white);
+  color: var(--black);
 
-  #planet-search::placeholder {
-    color: var(--black);
-    opacity: 0.6;
-        }
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  outline: none;
+}
+
+#planet-search::placeholder {
+  color: var(--black);
+  opacity: 0.6;
+}
 
 /* Search button */
-    form[role="search"] button {
-    padding: 14px 24px;
+form[role="search"] button {
+  padding: 14px 24px;
 
-    border: 0;
-    border-radius: 4px;
-    
-    background-color: var(--searchblue);
-    color: var(--white);
+  border: 0;
+  border-radius: 4px;
 
-    font-family: "Karla", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+  background-color: var(--searchblue);
+  color: var(--white);
 
-    cursor: pointer;
-          }
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
 
+  cursor: pointer;
+}
 
 /* =========================
    PLANET PROFILE
    ========================= */
 
-   main > article {
-    width: 100%;
-    max-width: 730px;
-    margin: 40px auto 0;
+main > article {
+  width: 100%;
+  max-width: 730px;
+  margin: 40px auto 0;
 
-    padding: 40px;
+  padding: 40px;
 
-    background-color: var(--white);
-    border-radius: 8px;
+  background-color: var(--white);
+  border-radius: 8px;
 
-    display: grid;
-    grid-template-columns: 117px 1fr;
-    column-gap: 32px;
-    row-gap: 24px;
-        }
-
+  display: grid;
+  grid-template-columns: 117px 1fr;
+  column-gap: 32px;
+  row-gap: 24px;
+}
 
 /* Planet image */
 
-  main > article > img {
-    width: 117px;
-    height: 117px;
-    align-self: center;
-        }
-
+main > article > img {
+  width: 117px;
+  height: 117px;
+  align-self: center;
+}
 
 /* Planet name and type */
-  main > article > header {
-    align-self: center;
-        }
+main > article > header {
+  align-self: center;
+}
 
-  main > article > header h1 {
-    color: var(--black);
-    font-size: 48px;
-    line-height: 1.1;
-        }
+main > article > header h1 {
+  color: var(--black);
+  font-size: 48px;
+  line-height: 1.1;
+}
 
-  main > article > header p {
-    margin-top: 8px;
+main > article > header p {
+  margin-top: 8px;
 
-    color: var(--darkblue);
+  color: var(--darkblue);
 
-    font-family: "Karla", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-        }
-
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
 
 /* Planet description */
 
-  main > article > p {
-    grid-column: 1 / -1;
+main > article > p {
+  grid-column: 1 / -1;
 
-    color: var(--black);
+  color: var(--black);
 
-    font-family: "Karla", sans-serif;
-    font-size: 18px;
-    line-height: 1.5;
-        }
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
 
-       
- /* =========================
+/* =========================
    PLANET PRIMARY STATS
    ========================= */
 
-   main > article > dl:first-of-type {
-    grid-column: 1 / -1;
+main > article > dl:first-of-type {
+  grid-column: 1 / -1;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-    border-top: 1px solid var(--brightblue);
-    border-bottom: 1px solid var(--brightblue);
-        }
+  border-top: 1px solid var(--brightblue);
+  border-bottom: 1px solid var(--brightblue);
+}
 
 @media (max-width: 768px) {
+  header {
+    width: min(100% - 30px, 700px);
+    padding: 20px 0;
+  }
 
-    header {
-        width: min(100% - 30px, 700px);
-        padding: 20px 0;
-    }
+  main {
+    width: min(100% - 30px, 700px);
+  }
 
-    main {
-        width: min(100% - 30px, 700px);
-    }
+  main > article {
+    padding: 25px;
 
-    main > article {
-        padding: 25px;
+    grid-template-columns: 110px 1fr;
+    column-gap: 25px;
+  }
 
-        grid-template-columns: 110px 1fr;
-        column-gap: 25px;
-    }
+  main > article > img {
+    width: 95px;
+    height: 95px;
+  }
 
-    main > article > img {
-        width: 95px;
-        height: 95px;
-    }
-
-    main > article > dl:first-of-type {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    main > article > dl:first-of-type > div {
-        padding: 15px;
-    }
-
-    main > article > dl:last-of-type {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 15px;
-    }
-
-    main > article > dl:last-of-type > div:nth-child(2) {
-        border-right: none;
-    }
-
-    main > article > dl:last-of-type > div:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--light-border);
-        padding-bottom: 15px;
-    }
-
-    body.dark-mode main > article > dl:last-of-type > div:nth-child(-n + 2) {
-        border-bottom-color: #34445c;
-    }
-
-    footer {
-        padding: 35px 25px;
-        flex-direction: column;
-    }
-
-    footer > p {
-        text-align: left;
-    }
-    }
+  main > article > dl:first-of-type {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   main > article > dl:first-of-type > div {
-    padding: 20px 16px;
+    padding: 15px;
+  }
 
-    display: flex;
+  main > article > dl:last-of-type {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
+
+  main > article > dl:last-of-type > div:nth-child(2) {
+    border-right: none;
+  }
+
+  main > article > dl:last-of-type > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--light-border);
+    padding-bottom: 15px;
+  }
+
+  body.dark-mode main > article > dl:last-of-type > div:nth-child(-n + 2) {
+    border-bottom-color: #34445c;
+  }
+
+  footer {
+    padding: 35px 25px;
     flex-direction: column;
-    gap: 4px;
+  }
 
-    text-align: center;
-        }
+  footer > p {
+    text-align: left;
+  }
+}
 
+main > article > dl:first-of-type > div {
+  padding: 20px 16px;
 
-  main > article > dl:first-of-type > div + div {
-    border-left: 1px solid var(--brightblue);
-        }
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 
+  text-align: center;
+}
 
-  main > article > dl:first-of-type dt {
-    color: var(--black);
+main > article > dl:first-of-type > div + div {
+  border-left: 1px solid var(--brightblue);
+}
 
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-        }
+main > article > dl:first-of-type dt {
+  color: var(--black);
 
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
-  main > article > dl:first-of-type dd {
-    color: var(--darkblue);
+main > article > dl:first-of-type dd {
+  color: var(--darkblue);
 
-    font-family: "Karla", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-         }
-        
- 
+  font-family: "Karla", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
 /* =========================
    PLANET ICON STATS
    ========================= */
 
-  main > article > dl:nth-of-type(2) {
-    grid-column: 1 / -1;
+main > article > dl:nth-of-type(2) {
+  grid-column: 1 / -1;
 
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-        }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
 
+main > article > dl:nth-of-type(2) > div {
+  min-width: 0;
 
-  main > article > dl:nth-of-type(2) > div {
-    min-width: 0;
+  padding: 16px;
 
-    padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
+  text-align: center;
+}
 
-    text-align: center 
-         }
+main > article > dl:nth-of-type(2) dt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  width: 40px;
+  height: 40px;
 
-  main > article > dl:nth-of-type(2) dt {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border-radius: 50%;
 
-    width: 40px;
-    height: 40px;
+  background-color: var(--brightblue);
+}
 
-    border-radius: 50%;
+main > article > dl:nth-of-type(2) dt img {
+  width: 20px;
+  height: 20px;
+}
 
-    background-color: var(--brightblue);
-        }
+main > article > dl:nth-of-type(2) dd {
+  color: var(--black);
 
-
-  main > article > dl:nth-of-type(2) dt img {
-    width: 20px;
-    height: 20px;
-    }
-
-
-  main > article > dl:nth-of-type(2) dd {
-    color: var(--black);
-
-    font-family: "Karla", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-        }
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
 /* =========================
    PLANETARY FACTS SECTION
    ========================= */
 
-  main > section {
-    width: 100%;
-    max-width: 730px;
-    margin: 64px auto 0;
-         }
+main > section {
+  width: 100%;
+  max-width: 730px;
+  margin: 64px auto 0;
+}
 
-  main > section > h2 {
-    color: var(--black);
-    font-size: 36px;
-    line-height: 1.2;
-        }
+main > section > h2 {
+  color: var(--black);
+  font-size: 36px;
+  line-height: 1.2;
+}
 
-  main > section > p {
-    max-width: 650px;
-    margin-top: 12px;
-    color: var(--black);
-    font-family: "Karla", sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-   } 
+main > section > p {
+  max-width: 650px;
+  margin-top: 12px;
+  color: var(--black);
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
 
-   
 /* =========================
    PLANETARY FACTS TABLE
    ========================= */
 
- main > section > table {
-    width: 100%;
-    margin-top: 32px;
-    
-    background-color: var(--white);
-    border: 1px solid var(--brightblue);
-    border-radius: 8px;
-    
-    overflow: hidden;
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
-        }
+main > section > table {
+  width: 100%;
+  margin-top: 32px;
 
+  background-color: var(--white);
+  border: 1px solid var(--brightblue);
+  border-radius: 8px;
 
- main > section > table caption {
-    margin-bottom: 12px;
+  overflow: hidden;
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+}
 
-    color: var(--captionblue);
+main > section > table caption {
+  margin-bottom: 12px;
 
-    font-size: 12px;
-    text-align: left;
-    }
+  color: var(--captionblue);
 
+  font-size: 12px;
+  text-align: left;
+}
 
 /* Table cells */
 
- main > section > table th,
-  main > section > table td {
-    padding: 14px 16px;
+main > section > table th,
+main > section > table td {
+  padding: 14px 16px;
 
-    border-bottom: 1px solid var(--brightblue);
+  border-bottom: 1px solid var(--brightblue);
 
-    text-align: left;
-    vertical-align: middle;
-        }
+  text-align: left;
+  vertical-align: middle;
+}
 
 /* Table header */
 
-  main > section > table thead {
-    background-color: var(--brightblue);
-        }
+main > section > table thead {
+  background-color: var(--brightblue);
+}
 
-  main > section > table thead th {
-    color: var(--black);
+main > section > table thead th {
+  color: var(--black);
 
-    font-weight: 700;
-        }
-
+  font-weight: 700;
+}
 
 /* Table body */
 
-  main > section > table tbody th {
-    color: var(--black);
-    font-weight: 700;
-  }               
+main > section > table tbody th {
+  color: var(--black);
+  font-weight: 700;
+}
 
-
-  main > section > table tbody td {
-    color: var(--black);
-        }
-
+main > section > table tbody td {
+  color: var(--black);
+}
 
 /* Remove the final bottom border */
 
-  main > section > table tbody tr:last-child th,
-   main > section > table tbody tr:last-child td {
-    border-bottom: 0;
+main > section > table tbody tr:last-child th,
+main > section > table tbody tr:last-child td {
+  border-bottom: 0;
 }
-    
-  
+
 /* =========================
    FOOTER
    ========================= */
 
-  body > footer {
-    width: 100%;
-    max-width: 730px;
-    margin: 80px auto 0;
-    padding: 48px 0 32px;
+body > footer {
+  width: 100%;
+  max-width: 730px;
+  margin: 80px auto 0;
+  padding: 48px 0 32px;
 
-    border-top: 1px solid var(--brightblue);
+  border-top: 1px solid var(--brightblue);
 
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
 
-    font-family: "Karla", sans-serif;
-         }
-
+  font-family: "Karla", sans-serif;
+}
 
 /* About section */
 
-   body > footer > section {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-        }
+body > footer > section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
+body > footer > section h3 {
+  color: var(--black);
 
-   body > footer > section h3 {
-    color: var(--black);
+  font-family: "DM Serif Display", serif;
+  font-size: 24px;
+  line-height: 1.2;
+}
 
-    font-family: "DM Serif Display", serif;
-    font-size: 24px;
-    line-height: 1.2;
-        }
+body > footer > section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
 
+  list-style: none;
+}
 
-  body > footer > section ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 20px;
+body > footer > section li {
+  margin: 0;
+}
 
-    list-style: none;
-        }
+body > footer > section a {
+  color: var(--darkblue);
 
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 
-   body > footer > section li {
-    margin: 0;
-        }
-
-
-   body > footer > section a {
-    color: var(--darkblue);
-                            
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-
-    text-decoration: none;
-            }
-
+  text-decoration: none;
+}
 
 /* =========================
    FOOTER COPYRIGHT & CREDITS
    ========================= */
 
-  body > footer > p {
-    max-width: 280px;
+body > footer > p {
+  max-width: 280px;
 
-    color: var(--black);
+  color: var(--black);
 
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
-    line-height: 1.8;
-        }
+  font-family: "Karla", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
 
-  body > footer > p small {
-    font-size: inherit;
-        }
+body > footer > p small {
+  font-size: inherit;
+}
 
-  body > footer > p small br {
-    display: block;
-    content: "";
-    margin-bottom: 4px;
-        }
+body > footer > p small br {
+  display: block;
+  content: "";
+  margin-bottom: 4px;
+}
 
-    
 /* =========================
    FOOTER LINK INTERACTIONS
    ========================= */
 
-   body > footer a:hover {
-    color: var(--searchblue);
-    text-decoration: underline;
-        }
+body > footer a:hover {
+  color: var(--searchblue);
+  text-decoration: underline;
+}
 
-   body > footer a:focus-visible {
-    outline: 2px solid var(--searchblue);
-    outline-offset: 4px;
-    border-radius: 2px;
-   }
+body > footer a:focus-visible {
+  outline: 2px solid var(--searchblue);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
 
 /* =========================================================
    RESPONSIVE DESIGN - TABLET
    ========================================================= */
 
 @media (max-width: 768px) {
+  /* Header */
+  body > header {
+    width: min(100% - 30px, 700px);
+    padding: 20px 0;
+  }
 
-    /* Header */
-    body > header {
-        width: min(100% - 30px, 700px);
-        padding: 20px 0;
-    }
+  /* Main content */
+  main {
+    width: min(100% - 30px, 700px);
+    margin: 0 auto;
+  }
 
-    /* Main content */
-    main {
-        width: min(100% - 30px, 700px);
-        margin: 0 auto;
-    }
+  /* Planet profile */
+  main > article {
+    padding: 25px;
+    grid-template-columns: 110px 1fr;
+    column-gap: 25px;
+  }
 
-    /* Planet profile */
-    main > article {
-        padding: 25px;
-        grid-template-columns: 110px 1fr;
-        column-gap: 25px;
-    }
+  main > article > img {
+    width: 95px;
+    height: 95px;
+  }
 
-    main > article > img {
-        width: 95px;
-        height: 95px;
-    }
+  /* Primary stats */
+  main > article > dl:first-of-type {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    /* Primary stats */
-    main > article > dl:first-of-type {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  main > article > dl:first-of-type > div {
+    padding: 15px;
+  }
 
-    main > article > dl:first-of-type > div {
-        padding: 15px;
-    }
+  /* Icon stats */
+  main > article > dl:nth-of-type(2) {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
 
-    /* Icon stats */
-    main > article > dl:nth-of-type(2) {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 15px;
-    }
+  main > article > dl:nth-of-type(2) > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--brightblue);
+    padding-bottom: 15px;
+  }
 
-    main > article > dl:nth-of-type(2) > div:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--brightblue);
-        padding-bottom: 15px;
-    }
+  /* Footer */
+  body > footer {
+    padding: 35px 25px;
+    flex-direction: column;
+  }
 
-    /* Footer */
-    body > footer {
-        padding: 35px 25px;
-        flex-direction: column;
-    }
-
-    body > footer > p {
-        text-align: left;
-    }
+  body > footer > p {
+    text-align: left;
+  }
 }
