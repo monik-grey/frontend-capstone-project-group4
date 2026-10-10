@@ -1,169 +1,213 @@
 /* Reset CSS */
-/* My Own repository (Remember to remove this comment when you use it) */ 
+/* My Own repository (Remember to remove this comment when you use it) */
 
 /* making use of :where to allow for low specificity making it easy to override */
 
-
-/* 1. border-box for box model */
+/* 1. border-box for box model */ /* (not Ade) */
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* 2. remove default margin 
-padding is optional but i do this because of lists*/
+padding is optional but i do this because of lists*/ /* (not Ade) */
 
 :where(:not(dialog)) {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-
-/* 3. great for in-page linking */
-@media(prefers-reduced-motion:no-preference) {
-    :where(html) {
-        scroll-behavior: smooth;
-    }
+/* 3. great for in-page linking */ /* (not Ade) */
+@media (prefers-reduced-motion: no-preference) {
+  :where(html) {
+    scroll-behavior: smooth;
+  }
 }
 
-/* 4. line height and text rendering improvement */
+/* 4. line height and text rendering improvement */ /* (not Ade) */
 :where(html) {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* 5. ensure full viewport height */
+/* 5. ensure full viewport height */ /* (not Ade) */
 :where(html, body) {
-    min-block-size: 100%;
+  min-block-size: 100%;
 }
 
-/* 6. improve line wrapping */
-:where(h1, h2, h3,
-    h4, h5, h6) {
-    text-wrap: balance;
+/* 6. improve line wrapping */ /* (not Ade) */
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
 }
 
 :where(p) {
-    text-wrap: pretty;
+  text-wrap: pretty;
 }
 
-:where(figure)>:where(figcaption) {
-    text-wrap: balance;
+:where(figure) > :where(figcaption) {
+  text-wrap: balance;
 }
 
-:where(p, h1, h2, h3,
-    h4, h5, h6) {
-    overflow-wrap: break-word;
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
 }
 
-
-
-/* 7. making media elements block-level */
-:where(img,
-    svg,
-    video,
-    canvas,
-    picture,
-    audio,
-    iframe,
-    embed,
-    object) {
-    display: block
+/* 7. making media elements block-level */ /* (not Ade) */
+:where(img, svg, video, canvas, picture, audio, iframe, embed, object) {
+  display: block;
 }
 
+/* (not Ade) */
 :where(img, svg, video, canvas, picture) {
-    block-size: auto;
-    max-inline-size: 100%
+  block-size: auto;
+  max-inline-size: 100%;
 }
 
-/* 8. inherit font and letter spacing for form controls */
-:where(input,
-    button,
-    textarea,
-    select),
-:where(input[type=file])::-webkit-file-upload-button {
-    font: inherit;
-    letter-spacing: inherit
+/* 8. inherit font and letter spacing for form controls */ /* (not Ade) */
+:where(input, button, textarea, select),
+:where(input[type="file"])::-webkit-file-upload-button {
+  font: inherit;
+  letter-spacing: inherit;
 }
 
-/* 9. textarea can only resized vertically and will grow to adjust its content */
+/* 9. textarea can only resized vertically and will grow to adjust its content */ /* (not Ade) */
 :where(textarea) {
-    resize: vertical;
-   field-sizing: content;
+  resize: vertical;
+  field-sizing: content;
 }
 
-/* 10. table */
+/* 10. table */ /* (not Ade) */
 :where(table) {
-    width: fit-content;
-    border-collapse: collapse;
+  width: fit-content;
+  border-collapse: collapse;
 }
 
+/* (not Ade) */
 :where(pre) {
-    direction: ltr;
-    max-inline-size: max-content;
-    min-inline-size: 0;
-    white-space: pre;
-    writing-mode: lr
+  direction: ltr;
+  max-inline-size: max-content;
+  min-inline-size: 0;
+  white-space: pre;
+  writing-mode: lr;
 }
 
-:where(a[href],
-    area,
-    button,
-    input:not([type=text],
-        [type=email],
-        [type=number],
-        [type=password],
-        [type=""],
-        [type=tel],
-        [type=url]),
-    label[for],
-    select,
-    summary,
-    [tabindex]:not([tabindex*="-"],
-        pre)) {
-    cursor: pointer
+/* (not Ade) */
+:where(
+  a[href],
+  area,
+  button,
+  input:not(
+    [type="text"],
+    [type="email"],
+    [type="number"],
+    [type="password"],
+    [type=""],
+    [type="tel"],
+    [type="url"]
+  ),
+  label[for],
+  select,
+  summary,
+  [tabindex]:not([tabindex*="-"], pre)
+) {
+  cursor: pointer;
 }
 
-/*  this will disable additional non-standard gestures such as double-tap to zoom*/
-:where(a[href],
-    area,
-    button,
-    input,
-    label[for],
-    select,
-    summary,
-    textarea,
-    [tabindex]:not([tabindex*="-"])) {
-    touch-action: manipulation
+/*  this will disable additional non-standard gestures such as double-tap to zoom (not Ade)*/
+:where(
+  a[href],
+  area,
+  button,
+  input,
+  label[for],
+  select,
+  summary,
+  textarea,
+  [tabindex]:not([tabindex*="-"])
+) {
+  touch-action: manipulation;
 }
-
-
 
 /*MY CSS*/
-
-:root{
+/* Was for the person that created the file */
+/* :root{
     
     --darkblue:rgba(22, 75, 175, 1);
     --brightblue:rgba(209, 227, 255, 1);
     --white:rgba(255, 255, 255, 1);
     --captionblue:rgba(22, 75, 175, 1);
     --searchblue:rgba(0, 121, 255, 1);
-    --backgroundwhite:rgba(246, 248, 255, 1);
+    --backgroundwhite:rgb(246, 248, 255);
     --black:rgba(43, 52, 66, 1); 
 }
+ */
 
-
-html{
-    font-family: "karla", sans-serif;
+/* (not Ade) */
+html {
+  font-family: "karla", sans-serif;
 }
 
-:where(h1, h2, h3, h4, h5, h6){
-    font-family: "DM Serif Display", serif;
+/* (not Ade) */
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: "DM Serif Display", serif;
 }
 
+/* root variables to make it easy to call some functions */
+:root {
+  /* Colors - Light Theme (default) */
+  --bg-page: #f6f8ff;
+  --bg-card: #ffffff;
+  --bg-stats: #f6f8ff;
+  --text-main: #2b3442;
+  --text-muted: #4b6a9b;
+  --text-accent: #0079ff;
+  --primary-blue: #0079ff;
+  --primary-blue-hover: #60a5fa;
+  --border-color: #e2e8f0;
+  --card-shadow: 0px 16px 30px -10px rgba(70, 96, 136, 0.2);
 
+  /* Table colors */
+  --th-bg: #164baf;
+  --th-text: #ffffff;
+  --tr-sub-bg: #d1e3ff;
+  --tr-border: #d1e3ff;
 
+  /* Typography sizes */
+  --fs-h1: 1.625rem; /* 26px */
+  --fs-body: 0.9375rem; /* 15px */
+}
 
+/* Dark Theme overrides */
+[data-theme="dark"] {
+  --bg-page: #0a1120;
+  --bg-card: #1b273b;
+  --bg-stats: #121c2d;
+  --text-main: #ffffff;
+  --text-muted: #8ea1b9;
+  --text-accent: #3b82f6;
+  --card-shadow: none;
+  --border-color: #2b3952;
+}
 
+/* Styles to the body */
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: "Karla", sans-serif;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+  padding: 1.5rem 1rem 3rem; /* mobile inline padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* Page wrapper / main container */
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 730px; /* Constrains desktop width according to the mockup */
+}
