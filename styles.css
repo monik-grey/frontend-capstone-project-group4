@@ -162,10 +162,10 @@ body {
 }
 
 /* Table colors */
---th-bg: #164baf;
+/* --th-bg: #164baf;
 --th-text: #ffffff;
 --tr-sub-bg: #d1e3ff;
---tr-border: #d1e3ff;
+--tr-border: #d1e3ff; */
 
 /* =========================
    MAIN HEADER
@@ -181,6 +181,7 @@ body > header {
   align-items: center;
   justify-content: space-between;
 }
+
 body > header > a {
   display: block;
 }
@@ -191,7 +192,7 @@ body > header > a img {
 }
 
 /* Dark Theme overrides */
-[data-theme="dark"] {
+/* [data-theme="dark"] {
   --bg-page: #0a1120;
   --bg-card: #1b273b;
   --bg-stats: #121c2d;
@@ -200,7 +201,7 @@ body > header > a img {
   --text-accent: #3b82f6;
   --card-shadow: none;
   --border-color: #2b3952;
-}
+} */
 
 /* Dark mode button */
 
