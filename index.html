@@ -1,249 +1,198 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Explore the planets in our solar system and discover fascinating facts/data about the eight planets in our solar system." />
+    <meta name="description"
+        content="Explore the planets in our solar system and discover fascinating facts/data about the eight planets in our solar system." />
     <meta name="author" content="Group-4" />
     <title>Planet | Group 4 Capstone Project</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
-      rel="stylesheet" />
-  </head>
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,200..800;1,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
 
-  <body>
-    <!-- Header Start -->
-    <header>
-      <a href="/" aria-label="Planet, home">
-        <img
-          src="images/logo-black.svg"
-          alt="Planet logo"
-          width="121"
-          height="52" />
-      </a>
-      <button type="button" aria-pressed="false">
-        Dark
-        <span>
-          <img
-            src="images/theme-icon.svg"
-            alt="moon icon"
-            width="20"
-            height="20" />
-        </span>
-      </button>
+</head>
+
+<body>
+    <!-- icon sprite: icons use currentColor so they follow the theme -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+        <symbol id="i-moon" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+        </symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4" fill="currentColor" />
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" />
+        </symbol>
+        <symbol id="i-search" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M16.5 16.5L21 21" />
+        </symbol>
+        <symbol id="i-temp" viewBox="0 0 640 640">
+            <path fill="currentColor"
+                d="M160 160C160 107 203 64 256 64C309 64 352 107 352 160L352 324.7C381.5 351.1 400 389.4 400 432C400 511.5 335.5 576 256 576C176.5 576 112 511.5 112 432C112 389.4 130.5 351 160 324.7L160 160zM256 496C291.3 496 320 467.3 320 432C320 405.1 303.5 382.1 280 372.7L280 160C280 146.7 269.3 136 256 136C242.7 136 232 146.7 232 160L232 372.7C208.5 382.2 192 405.2 192 432C192 467.3 220.7 496 256 496zM528 144C528 126.3 513.7 112 496 112C478.3 112 464 126.3 464 144C464 161.7 478.3 176 496 176C513.7 176 528 161.7 528 144zM416 144C416 99.8 451.8 64 496 64C540.2 64 576 99.8 576 144C576 188.2 540.2 224 496 224C451.8 224 416 188.2 416 144z" />
+        </symbol>
+        <symbol id="i-circle" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" fill="currentColor" />
+        </symbol>
+        <!-- Sun icon: Font Awesome Free v7.3.1, https://fontawesome.com (CC BY 4.0) -->
+        <symbol id="i-distance" viewBox="0 0 576 512">
+            <path fill="currentColor"
+                d="M288-32c8 0 15.4 4 19.9 10.6l58.8 87.4 103.4-20.2c7.8-1.5 15.9 .9 21.6 6.6s8.1 13.8 6.6 21.6L478 177.3 565.4 236.1C572 240.5 576 248 576 256s-4 15.4-10.6 19.9L478 334.7 498.2 438c1.5 7.8-.9 15.9-6.6 21.6s-13.8 8.1-21.6 6.6L366.7 446 307.9 533.4C303.4 540 296 544 288 544s-15.4-4-19.9-10.6L209.3 446 105.9 466.2c-7.8 1.5-15.9-.9-21.6-6.6s-8.1-13.8-6.6-21.6L98 334.7 10.6 275.9C4 271.4 0 264 0 256s4-15.4 10.6-19.9L98 177.3 77.8 73.9c-1.5-7.8 .9-15.9 6.6-21.6s13.8-8.1 21.6-6.6l103.3 20.2 58.8-87.4 1.8-2.3C274.4-29 281-32 288-32zm-47.8 138c-5.4 8-15 12-24.5 10.2l-84-16.4 16.4 84c1.8 9.5-2.2 19.1-10.2 24.5L67 256 138 303.8c8 5.4 12 15 10.2 24.5l-16.4 84 84-16.4 3.5-.4c8.3-.4 16.3 3.6 21 10.6l47.8 71 47.8-71 2.2-2.8c5.6-6.1 14-9 22.3-7.3l84 16.4-16.4-84c-1.8-9.5 2.2-19.1 10.2-24.5l71-47.8-71-47.8c-8-5.4-12-15-10.2-24.5l16.4-84-84 16.4c-9.5 1.8-19.1-2.2-24.5-10.2l-47.8-71-47.8 71zM288 376a120 120 0 1 1 0-240 120 120 0 1 1 0 240zm0-192a72 72 0 1 0 0 144 72 72 0 1 0 0-144z" />
+        </symbol>
+    </svg>
+
+    <!-- Header Section -->
+    <header class="container site-header">
+        <a href="index.html" class="logo">
+            <img src="images/logo_black.svg" alt="Planet Home" />
+        </a>
+
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode">
+            <span id="theme-label">Dark</span>
+            <svg class="icon icon-moon" aria-hidden="true">
+                <use href="#i-moon" />
+            </svg>
+            <svg class="icon icon-sun" aria-hidden="true">
+                <use href="#i-sun" />
+            </svg>
+        </button>
     </header>
 
-    <!-- Main Content Start -->
-    <main>
-      <!-- Search Form -->
-      <form role="search" action="" method="get">
-        <!-- NB: Add search icon with CSS or JS-->
-        <input
-          id="planet-search"
-          name="search"
-          type="search"
-          placeholder="Search planet name" />
-        <button type="submit">Search</button>
-      </form>
+    <!-- Main Section -->
+    <main class="container">
+        <form class="search-bar" id="search-form" role="search" action="">
+            <svg class="search-icon" aria-hidden="true">
+                <use href="#i-search" />
+            </svg>
+            <label for="planet-search" class="sr-only">Search planet name</label>
+            <input type="text" id="planet-search" name="planet" placeholder="Search planet name…" autocomplete="off"
+                aria-describedby="search-error" />
+            <span id="search-error" class="search-error" hidden>
+                No result
+            </span>
+            <button type="submit" class="search-btn">Search</button>
+        </form>
 
-      <!-- Planet Profile Start -->
-      <article aria-labelledby="planet-name">
-        <img
-          src="images/image26.svg"
-          alt="Cenematics earth img"
-          width="117"
-          height="117" />
-        <header>
-          <h1 id="planet-name">Earth</h1>
-          <p>Terrestrial</p>
-        </header>
+        <article id="planet-card" class="card planet-card" hidden>
+            <img id="planet-image" class="planet-image" src="" alt="" />
 
-        <p>
-          The only known planet to support life, with liquid water on its
-          surface.
-        </p>
+            <div class="planet-heading">
+                <h2 id="planet-name"></h2>
+                <p id="planet-type" class="planet-type"></p>
+            </div>
 
-        <!-- Planet Details -->
-        <dl>
-          <div>
-            <dt>Gravity</dt>
-            <dd>9.8</dd>
-          </div>
-          <div>
-            <dt>Mass</dt>
-            <dd>0.00315</dd>
-          </div>
-          <div>
-            <dt>Period</dt>
-            <dd>365</dd>
-          </div>
-        </dl>
+            <p id="planet-description" class="planet-description"></p>
 
-        <!-- Planet Details with Icons -->
-        <dl>
-          <div>
-            <dt aria-label="Temperature">
-              <img
-                src="images/temperature-icon.svg"
-                alt="Temperature icon"
-                width="20"
-                height="20" />
-            </dt>
-            <dd>288</dd>
-          </div>
-          <div>
-            <dt aria-label="Moons">
-              <img
-                src="images/half-moon-icon.svg"
-                alt="Moons icon"
-                width="20"
-                height="20" />
-            </dt>
-            <dd>1</dd>
-          </div>
-          <div>
-            <dt aria-label="Diameter">
-              <img
-                src="images/diameter-icon.svg"
-                alt="Diameter icon"
-                width="20"
-                height="20" />
-            </dt>
-            <dd>12756</dd>
-          </div>
-          <div>
-            <dt aria-label="Distance from Sun">
-              <img
-                src="images/gear-icon.svg"
-                alt="Distance from Sun icon"
-                width="20"
-                height="20" />
-            </dt>
-            <dd>149.6</dd>
-          </div>
-        </dl>
-      </article>
-      <!-- Planet Profile End -->
+            <dl class="planet-stats">
+                <div>
+                    <dt>Gravity</dt>
+                    <dd id="planet-gravity"></dd>
+                </div>
+                <div>
+                    <dt>Mass</dt>
+                    <dd id="planet-mass"></dd>
+                </div>
+                <div>
+                    <dt>Period</dt>
+                    <dd id="planet-period"></dd>
+                </div>
+            </dl>
 
-      <!-- Planetary Facts Section-->
-      <section aria-labelledby="facts-heading">
-        <h2 id="facts-heading">Planetary Facts at a Glance</h2>
-        <p>
-          Below is a comparative table of major planets in our solar system. The
-          data highlights key physical properties used by astronomers and
-          researchers worldwide.
-        </p>
+            <ul class="planet-extras">
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use href="#i-temp" />
+                    </svg><span class="sr-only">Temperature</span><strong id="planet-temperature"></strong>
+                </li>
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use href="#i-moon" />
+                    </svg><span class="sr-only">Moons</span><strong id="planet-moons"></strong>
+                </li>
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use href="#i-circle" />
+                    </svg><span class="sr-only">Diameter</span><strong id="planet-diameter"></strong>
+                </li>
+                <li>
+                    <svg class="icon" aria-hidden="true">
+                        <use href="#i-distance" />
+                    </svg><span class="sr-only">Distance from Sun</span><strong id="planet-distance"></strong>
+                </li>
+            </ul>
+        </article>
 
-        <!--Table-->
-        <table>
-          <caption>
-            Data about the planets of our solar system (Planetary facts taken
-            from NASA)
-          </caption>
-          <thead>
-            <tr>
-              <th scope="col" colspan="2"><span>Classification</span></th>
-              <th scope="col">Name</th>
-              <th scope="col">Mass (10<sup>24</sup>&nbsp;kg)</th>
-              <th scope="col">Diameter (km)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="rowgroup" colspan="2" rowspan="4">
-                Terrestrial Planets
-              </th>
-              <th scope="row">Mercury</th>
-              <td>0.330</td>
-              <td>4,878</td>
-            </tr>
-            <tr>
-              <th scope="row">Venus</th>
-              <td>0.330</td>
-              <td>4,878</td>
-            </tr>
-            <tr>
-              <th scope="row">Earth</th>
-              <td>0.330</td>
-              <td>4,878</td>
-            </tr>
-            <tr>
-              <th scope="row">Mars</th>
-              <td>0.330</td>
-              <td>4,878</td>
-            </tr>
-            <tr>
-              <th scope="rowgroup" rowspan="4">Jovian Planets</th>
-              <th scope="rowgroup" rowspan="2">Gas Giants</th>
-              <th scope="row">Jupiter</th>
-              <td>0.330</td>
-              <td>4,878</td>
-            </tr>
-            <tr>
-              <th scope="row">Saturn</th>
-              <td>0.330</td>
-              <td>4,878</td>
-            </tr>
-            <tr>
-              <th scope="rowgroup" rowspan="2">Ice Giants</th>
-              <th scope="row">Uranus</th>
-              <td>0.330</td>
-              <td>4,878</td>
-            </tr>
-            <tr>
-              <th scope="row">Neptune</th>
-              <td>0.330</td>
-              <td>4,878</td>
-            </tr>
-            <tr>
-              <th scope="rowgroup" colspan="2">Dwarf Planets</th>
-              <th scope="row">Pluto</th>
-              <td>0.330</td>
-              <td>4,878</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+        <section id="status-card" class="card status-card" role="status" hidden>
+            <h2 id="status-title"></h2>
+            <p id="status-text"></p>
+        </section>
+
+        <section class="facts">
+            <h2>Planetary Facts at a Glance</h2>
+            <p>
+                Below is a comparative table of major planets in our solar
+                system. The data highlights key physical properties used by
+                astronomers and researchers worldwide.
+            </p>
+
+            <div class="table-wrap">
+                <table class="planet-table">
+                    <caption>
+                        Data about the planets of our solar system
+                        <span class="caption-extra">(Planetary facts taken from NASA)</span>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <span class="sr-only">Group</span>
+                            </th>
+                            <th scope="col">Name</th>
+                            <th scope="col" class="col-mass">
+                                Mass (10 24kg)
+                            </th>
+                            <th scope="col">Diameter (km)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="planet-table-body"></tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
-    <!--footer-->
-    <footer>
-      <section aria-labelledby="about-heading">
-        <h3 id="about-heading">About</h3>
-        <ul>
-          <li>
-            <a href="https://github.com/monik-grey" target="_blank">Osamede</a>
-          </li>
-          <li>
-            <a href="https://github.com/barristerInTech" target="_blank"
-              >Joshua</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/crown-great02" target="_blank"
-              >Adeoluwa</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/thelma-dot88" target="_blank">Thelma</a>
-          </li>
-          <li>
-            <a href="https://github.com/Badboyvado" target="_blank">Habeeb</a>
-          </li>
-        </ul>
-      </section>
-      <p>
-        <small>
-          &copy;2026 Design by Amaka N<br />
-          Built by Group Four. All rights reserved<br />
-          TSAcademy
-        </small>
-      </p>
+    <footer class="container site-footer">
+        <section>
+            <h2>About</h2>
+            <p>
+                <a href="https://github.com/EMPRINTNATION" target="_blank" rel="noopener noreferrer">Mark-anthony</a><br>
+                <a href="https://github.com/monik-grey" target="_blank" rel="noopener noreferrer">Osamede</a><br>
+                <a href="https://github.com/barristerInTech" target="_blank" rel="noopener noreferrer">Joshua</a><br>
+                <a href="https://github.com/Thelma-dot88" target="_blank" rel="noopener noreferrer">Thelma</a><br>
+                <a href="https://github.com/augustinaakintewe-max" target="_blank" rel="noopener noreferrer">Augustina</a><br>
+                <a href="https://github.com/Badboyvado" target="_blank" rel="noopener noreferrer">Habeeb</a><br>
+                <a href="https://github.com/teemaa876" target="_blank" rel="noopener noreferrer">Fatima</a><br>
+                <a href="https://github.com/Crown-great02" target="_blank" rel="noopener noreferrer">Adeoluwa</a><br>
+                <a href="https://github.com/ChisomWeb" target="_blank" rel="noopener noreferrer">Chisom</a><br>
+
+            </p>
+        </section>
+
+        <p class="credits">
+            © 2026 Design by
+            <a href="https://amakandukwu.com" target="_blank" rel="noopener noreferrer">Amaka N</a><br>
+            Built by
+            <a href="https://github.com/monik-grey/frontend-capstone-project-group4.git" target="_blank"
+                rel="noopener noreferrer">Group
+                Four(4)</a>. All rights reserved<br>
+            <a href="https://tsacademyonline.com/" target="_blank" rel="noopener noreferrer">TSAcademy</a>
+        </p>
     </footer>
-  </body>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
