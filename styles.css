@@ -1,742 +1,765 @@
 /* Reset CSS */
-/* My Own repository (Remember to remove this comment when you use it) */
 
 /* making use of :where to allow for low specificity making it easy to override */
 
-/* 1. border-box for box model */ /* (not Ade) */
+
+/* 1. border-box for box model */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* 2. remove default margin 
-padding is optional but i do this because of lists*/ /* (not Ade) */
+padding is optional but i do this because of lists*/
 
 :where(:not(dialog)) {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-/* 3. great for in-page linking */ /* (not Ade) */
-@media (prefers-reduced-motion: no-preference) {
-  :where(html) {
-    scroll-behavior: smooth;
-  }
+
+/* 3. great for in-page linking */
+@media(prefers-reduced-motion:no-preference) {
+    :where(html) {
+        scroll-behavior: smooth;
+    }
 }
 
-/* 4. line height and text rendering improvement */ /* (not Ade) */
+/* 4. line height and text rendering improvement */
 :where(html) {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* 5. ensure full viewport height */ /* (not Ade) */
+/* 5. ensure full viewport height */
 :where(html, body) {
-  min-block-size: 100%;
+    min-block-size: 100%;
 }
 
-/* 6. improve line wrapping */ /* (not Ade) */
-:where(h1, h2, h3, h4, h5, h6) {
-  text-wrap: balance;
+/* 6. improve line wrapping */
+:where(h1, h2, h3,
+    h4, h5, h6) {
+    text-wrap: balance;
 }
 
 :where(p) {
-  text-wrap: pretty;
+    text-wrap: pretty;
 }
 
-:where(figure) > :where(figcaption) {
-  text-wrap: balance;
+:where(figure)>:where(figcaption) {
+    text-wrap: balance;
 }
 
-:where(p, h1, h2, h3, h4, h5, h6) {
-  overflow-wrap: break-word;
+:where(p, h1, h2, h3,
+    h4, h5, h6) {
+    overflow-wrap: break-word;
 }
 
-/* 7. making media elements block-level */ /* (not Ade) */
-:where(img, svg, video, canvas, picture, audio, iframe, embed, object) {
-  display: block;
+
+
+/* 7. making media elements block-level */
+:where(img,
+    svg,
+    video,
+    canvas,
+    picture,
+    audio,
+    iframe,
+    embed,
+    object) {
+    display: block
 }
 
-/* (not Ade) */
 :where(img, svg, video, canvas, picture) {
-  block-size: auto;
-  max-inline-size: 100%;
+    block-size: auto;
+    max-inline-size: 100%
 }
 
-/* 8. inherit font and letter spacing for form controls */ /* (not Ade) */
-:where(input, button, textarea, select),
-:where(input[type="file"])::-webkit-file-upload-button {
-  font: inherit;
-  letter-spacing: inherit;
+/* 8. inherit font and letter spacing for form controls */
+:where(input,
+    button,
+    textarea,
+    select),
+:where(input[type=file])::-webkit-file-upload-button {
+    font: inherit;
+    letter-spacing: inherit
 }
 
-/* 9. textarea can only resized vertically and will grow to adjust its content */ /* (not Ade) */
+/* 9. textarea can only resized vertically and will grow to adjust its content */
 :where(textarea) {
-  resize: vertical;
-  field-sizing: content;
+    resize: vertical;
+   field-sizing: content;
 }
 
-/* 10. table */ /* (not Ade) */
+/* 10. table */
 :where(table) {
-  width: fit-content;
-  border-collapse: collapse;
+    width: fit-content;
+    border-collapse: collapse;
 }
 
-/* (not Ade) */
 :where(pre) {
-  direction: ltr;
-  max-inline-size: max-content;
-  min-inline-size: 0;
-  white-space: pre;
-  writing-mode: lr;
+    direction: ltr;
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+    writing-mode: lr
 }
 
-/* (not Ade) */
-:where(
-  a[href],
-  area,
-  button,
-  input:not(
-    [type="text"],
-    [type="email"],
-    [type="number"],
-    [type="password"],
-    [type=""],
-    [type="tel"],
-    [type="url"]
-  ),
-  label[for],
-  select,
-  summary,
-  [tabindex]:not([tabindex*="-"], pre)
-) {
-  cursor: pointer;
+:where(a[href],
+    area,
+    button,
+    input:not([type=text],
+        [type=email],
+        [type=number],
+        [type=password],
+        [type=""],
+        [type=tel],
+        [type=url]),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*="-"],
+        pre)) {
+    cursor: pointer
 }
 
-/*  this will disable additional non-standard gestures such as double-tap to zoom (not Ade)*/
-:where(
-  a[href],
-  area,
-  button,
-  input,
-  label[for],
-  select,
-  summary,
-  textarea,
-  [tabindex]:not([tabindex*="-"])
-) {
-  touch-action: manipulation;
+/*  this will disable additional non-standard gestures such as double-tap to zoom*/
+:where(a[href],
+    area,
+    button,
+    input,
+    label[for],
+    select,
+    summary,
+    textarea,
+    [tabindex]:not([tabindex*="-"])) {
+    touch-action: manipulation
 }
+
+
 
 /*MY CSS*/
-/* Was for the person that created the file */
-:root {
-  --darkblue: rgba(22, 75, 175, 1);
-  --brightblue: rgba(209, 227, 255, 1);
-  --white: rgba(255, 255, 255, 1);
-  --captionblue: rgba(22, 75, 175, 1);
-  --searchblue: rgba(0, 121, 255, 1);
-  --backgroundwhite: rgb(246, 248, 255);
-  --black: rgba(43, 52, 66, 1);
+
+:root{
+    
+    --darkblue:rgba(22, 75, 175, 1);
+    --brightblue:rgba(209, 227, 255, 1);
+    --white:rgba(255, 255, 255, 1);
+    --captionblue:rgba(22, 75, 175, 1);
+    --searchblue:rgba(0, 121, 255, 1);
+    --backgroundwhite:rgba(246, 248, 255, 1);
+    --black:rgba(43, 52, 66, 1); 
 }
 
-/* (not Ade) */
-html {
-  font-family: "karla", sans-serif;
+
+html{
+    font-family: "karla", sans-serif;
 }
 
-/* (not Ade) */
-:where(h1, h2, h3, h4, h5, h6) {
-  font-family: "DM Serif Display", serif;
+:where(h1, h2, h3, h4, h5, h6){
+    font-family: "DM Serif Display", serif;
 }
 
 /* =========================
    PAGE FOUNDATION
    ========================= */
 
-body {
-  min-height: 100vh;
-  background-color: var(--backgroundwhite);
-  color: var(--black);
-}
+   body {
+    min-height: 100vh;
+    background-color: var(--backgroundwhite);
+    color: var(--black);
+        }
 
-/* Table colors */
-/* --th-bg: #164baf;
---th-text: #ffffff;
---tr-sub-bg: #d1e3ff;
---tr-border: #d1e3ff; */
 
 /* =========================
    MAIN HEADER
    ========================= */
 
-body > header {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 32px 40px;
+  body > header {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 32px 40px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+                }
+   body > header > a {
+    display: block;
+        }
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  body > header > a img {
+    width: 121px;
+    height: auto;
+        }
 
-body > header > a {
-  display: block;
-}
-
-body > header > a img {
-  width: 121px;
-  height: auto;
-}
-
-/* Dark Theme overrides */
-/* [data-theme="dark"] {
-  --bg-page: #0a1120;
-  --bg-card: #1b273b;
-  --bg-stats: #121c2d;
-  --text-main: #ffffff;
-  --text-muted: #8ea1b9;
-  --text-accent: #3b82f6;
-  --card-shadow: none;
-  --border-color: #2b3952;
-} */
 
 /* Dark mode button */
 
-body > header > button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border: 0;
-  background: transparent;
-  color: var(--black);
-  font-family: "Karla", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-}
+  body > header > button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    background: transparent;
+    color: var(--black);
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+        }
 
-body > header > button img {
-  width: 20px;
-  height: 20px;
-}
-
+    body > header > button img {
+            width: 20px;
+            height: 20px;
+                }
+            
 /* =========================
    SEARCH FORM
    ========================= */
 
-form[role="search"] {
-  width: 100%;
-  max-width: 730px;
-  margin: 0 auto;
-  display: flex;
-  align-items: stretch;
-  gap: 10px;
-}
+  form[role="search"] {
+    width: 100%;
+    max-width: 730px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+            }
+
 
 /* Search input */
 
-#planet-search {
-  flex: 1;
-  min-width: 0;
-  padding: 14px 16px;
+  #planet-search {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+   
+    border: 1px solid var(--brightblue);
+    border-radius: 4px;
 
-  border: 1px solid var(--brightblue);
-  border-radius: 4px;
+    background-color: var(--white);
+    color: var(--black);
 
-  background-color: var(--white);
-  color: var(--black);
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    outline: none;
+        }
 
-  font-family: "Karla", sans-serif;
-  font-size: 16px;
-  outline: none;
-}
-
-#planet-search::placeholder {
-  color: var(--black);
-  opacity: 0.6;
-}
+  #planet-search::placeholder {
+    color: var(--black);
+    opacity: 0.6;
+        }
 
 /* Search button */
-form[role="search"] button {
-  padding: 14px 24px;
+    form[role="search"] button {
+    padding: 14px 24px;
 
-  border: 0;
-  border-radius: 4px;
+    border: 0;
+    border-radius: 4px;
+    
+    background-color: var(--searchblue);
+    color: var(--white);
 
-  background-color: var(--searchblue);
-  color: var(--white);
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
 
-  font-family: "Karla", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+    cursor: pointer;
+          }
 
-  cursor: pointer;
-}
 
 /* =========================
    PLANET PROFILE
    ========================= */
 
-main > article {
-  width: 100%;
-  max-width: 730px;
-  margin: 40px auto 0;
+   main > article {
+    width: 100%;
+    max-width: 730px;
+    margin: 40px auto 0;
 
-  padding: 40px;
+    padding: 40px;
 
-  background-color: var(--white);
-  border-radius: 8px;
+    background-color: var(--white);
+    border-radius: 8px;
 
-  display: grid;
-  grid-template-columns: 117px 1fr;
-  column-gap: 32px;
-  row-gap: 24px;
-}
+    display: grid;
+    grid-template-columns: 117px 1fr;
+    column-gap: 32px;
+    row-gap: 24px;
+        }
+
 
 /* Planet image */
 
-main > article > img {
-  width: 117px;
-  height: 117px;
-  align-self: center;
-}
+  main > article > img {
+    width: 117px;
+    height: 117px;
+    align-self: center;
+        }
+
 
 /* Planet name and type */
-main > article > header {
-  align-self: center;
-}
+  main > article > header {
+    align-self: center;
+        }
 
-main > article > header h1 {
-  color: var(--black);
-  font-size: 48px;
-  line-height: 1.1;
-}
+  main > article > header h1 {
+    color: var(--black);
+    font-size: 48px;
+    line-height: 1.1;
+        }
 
-main > article > header p {
-  margin-top: 8px;
+  main > article > header p {
+    margin-top: 8px;
 
-  color: var(--darkblue);
+    color: var(--darkblue);
 
-  font-family: "Karla", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-}
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+        }
+
 
 /* Planet description */
 
-main > article > p {
-  grid-column: 1 / -1;
+  main > article > p {
+    grid-column: 1 / -1;
 
-  color: var(--black);
+    color: var(--black);
 
-  font-family: "Karla", sans-serif;
-  font-size: 18px;
-  line-height: 1.5;
-}
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+        }
 
-/* =========================
+       
+ /* =========================
    PLANET PRIMARY STATS
    ========================= */
 
-main > article > dl:first-of-type {
-  grid-column: 1 / -1;
+   main > article > dl:first-of-type {
+    grid-column: 1 / -1;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-  border-top: 1px solid var(--brightblue);
-  border-bottom: 1px solid var(--brightblue);
-}
+    border-top: 1px solid var(--brightblue);
+    border-bottom: 1px solid var(--brightblue);
+        }
 
 @media (max-width: 768px) {
-  header {
-    width: min(100% - 30px, 700px);
-    padding: 20px 0;
-  }
 
-  main {
-    width: min(100% - 30px, 700px);
-  }
+    header {
+        width: min(100% - 30px, 700px);
+        padding: 20px 0;
+    }
 
-  main > article {
-    padding: 25px;
+    main {
+        width: min(100% - 30px, 700px);
+    }
 
-    grid-template-columns: 110px 1fr;
-    column-gap: 25px;
-  }
+    main > article {
+        padding: 25px;
 
-  main > article > img {
-    width: 95px;
-    height: 95px;
-  }
+        grid-template-columns: 110px 1fr;
+        column-gap: 25px;
+    }
 
-  main > article > dl:first-of-type {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    main > article > img {
+        width: 95px;
+        height: 95px;
+    }
+
+    main > article > dl:first-of-type {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main > article > dl:first-of-type > div {
+        padding: 15px;
+    }
+
+    main > article > dl:last-of-type {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 15px;
+    }
+
+    main > article > dl:last-of-type > div:nth-child(2) {
+        border-right: none;
+    }
+
+    main > article > dl:last-of-type > div:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--light-border);
+        padding-bottom: 15px;
+    }
+
+    body.dark-mode main > article > dl:last-of-type > div:nth-child(-n + 2) {
+        border-bottom-color: #34445c;
+    }
+
+    footer {
+        padding: 35px 25px;
+        flex-direction: column;
+    }
+
+    footer > p {
+        text-align: left;
+    }
+    }
 
   main > article > dl:first-of-type > div {
-    padding: 15px;
-  }
+    padding: 20px 16px;
 
-  main > article > dl:last-of-type {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 15px;
-  }
-
-  main > article > dl:last-of-type > div:nth-child(2) {
-    border-right: none;
-  }
-
-  main > article > dl:last-of-type > div:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--light-border);
-    padding-bottom: 15px;
-  }
-
-  body.dark-mode main > article > dl:last-of-type > div:nth-child(-n + 2) {
-    border-bottom-color: #34445c;
-  }
-
-  footer {
-    padding: 35px 25px;
+    display: flex;
     flex-direction: column;
-  }
+    gap: 4px;
 
-  footer > p {
-    text-align: left;
-  }
-}
+    text-align: center;
+        }
 
-main > article > dl:first-of-type > div {
-  padding: 20px 16px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  main > article > dl:first-of-type > div + div {
+    border-left: 1px solid var(--brightblue);
+        }
 
-  text-align: center;
-}
 
-main > article > dl:first-of-type > div + div {
-  border-left: 1px solid var(--brightblue);
-}
+  main > article > dl:first-of-type dt {
+    color: var(--black);
 
-main > article > dl:first-of-type dt {
-  color: var(--black);
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+        }
 
-  font-family: "Karla", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
 
-main > article > dl:first-of-type dd {
-  color: var(--darkblue);
+  main > article > dl:first-of-type dd {
+    color: var(--darkblue);
 
-  font-family: "Karla", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-}
-
+    font-family: "Karla", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+         }
+        
+ 
 /* =========================
    PLANET ICON STATS
    ========================= */
 
-main > article > dl:nth-of-type(2) {
-  grid-column: 1 / -1;
+  main > article > dl:nth-of-type(2) {
+    grid-column: 1 / -1;
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+        }
 
-main > article > dl:nth-of-type(2) > div {
-  min-width: 0;
 
-  padding: 16px;
+  main > article > dl:nth-of-type(2) > div {
+    min-width: 0;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
+    padding: 16px;
 
-  text-align: center;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 
-main > article > dl:nth-of-type(2) dt {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    text-align: center 
+         }
 
-  width: 40px;
-  height: 40px;
 
-  border-radius: 50%;
+  main > article > dl:nth-of-type(2) dt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  background-color: var(--brightblue);
-}
+    width: 40px;
+    height: 40px;
 
-main > article > dl:nth-of-type(2) dt img {
-  width: 20px;
-  height: 20px;
-}
+    border-radius: 50%;
 
-main > article > dl:nth-of-type(2) dd {
-  color: var(--black);
+    background-color: var(--brightblue);
+        }
 
-  font-family: "Karla", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-}
+
+  main > article > dl:nth-of-type(2) dt img {
+    width: 20px;
+    height: 20px;
+    }
+
+
+  main > article > dl:nth-of-type(2) dd {
+    color: var(--black);
+
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+        }
 /* =========================
    PLANETARY FACTS SECTION
    ========================= */
 
-main > section {
-  width: 100%;
-  max-width: 730px;
-  margin: 64px auto 0;
-}
+  main > section {
+    width: 100%;
+    max-width: 730px;
+    margin: 64px auto 0;
+         }
 
-main > section > h2 {
-  color: var(--black);
-  font-size: 36px;
-  line-height: 1.2;
-}
+  main > section > h2 {
+    color: var(--black);
+    font-size: 36px;
+    line-height: 1.2;
+        }
 
-main > section > p {
-  max-width: 650px;
-  margin-top: 12px;
-  color: var(--black);
-  font-family: "Karla", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-}
+  main > section > p {
+    max-width: 650px;
+    margin-top: 12px;
+    color: var(--black);
+    font-family: "Karla", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+   } 
 
+   
 /* =========================
    PLANETARY FACTS TABLE
    ========================= */
 
-main > section > table {
-  width: 100%;
-  margin-top: 32px;
+ main > section > table {
+    width: 100%;
+    margin-top: 32px;
+    
+    background-color: var(--white);
+    border: 1px solid var(--brightblue);
+    border-radius: 8px;
+    
+    overflow: hidden;
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+        }
 
-  background-color: var(--white);
-  border: 1px solid var(--brightblue);
-  border-radius: 8px;
 
-  overflow: hidden;
-  font-family: "Karla", sans-serif;
-  font-size: 14px;
-}
+ main > section > table caption {
+    margin-bottom: 12px;
 
-main > section > table caption {
-  margin-bottom: 12px;
+    color: var(--captionblue);
 
-  color: var(--captionblue);
+    font-size: 12px;
+    text-align: left;
+    }
 
-  font-size: 12px;
-  text-align: left;
-}
 
 /* Table cells */
 
-main > section > table th,
-main > section > table td {
-  padding: 14px 16px;
+ main > section > table th,
+  main > section > table td {
+    padding: 14px 16px;
 
-  border-bottom: 1px solid var(--brightblue);
+    border-bottom: 1px solid var(--brightblue);
 
-  text-align: left;
-  vertical-align: middle;
-}
+    text-align: left;
+    vertical-align: middle;
+        }
 
 /* Table header */
 
-main > section > table thead {
-  background-color: var(--brightblue);
-}
+  main > section > table thead {
+    background-color: var(--brightblue);
+        }
 
-main > section > table thead th {
-  color: var(--black);
+  main > section > table thead th {
+    color: var(--black);
 
-  font-weight: 700;
-}
+    font-weight: 700;
+        }
+
 
 /* Table body */
 
-main > section > table tbody th {
-  color: var(--black);
-  font-weight: 700;
-}
+  main > section > table tbody th {
+    color: var(--black);
+    font-weight: 700;
+  }               
 
-main > section > table tbody td {
-  color: var(--black);
-}
+
+  main > section > table tbody td {
+    color: var(--black);
+        }
+
 
 /* Remove the final bottom border */
 
-main > section > table tbody tr:last-child th,
-main > section > table tbody tr:last-child td {
-  border-bottom: 0;
+  main > section > table tbody tr:last-child th,
+   main > section > table tbody tr:last-child td {
+    border-bottom: 0;
 }
-
+    
+  
 /* =========================
    FOOTER
    ========================= */
 
-body > footer {
-  width: 100%;
-  max-width: 730px;
-  margin: 80px auto 0;
-  padding: 48px 0 32px;
+  body > footer {
+    width: 100%;
+    max-width: 730px;
+    margin: 80px auto 0;
+    padding: 48px 0 32px;
 
-  border-top: 1px solid var(--brightblue);
+    border-top: 1px solid var(--brightblue);
 
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
 
-  font-family: "Karla", sans-serif;
-}
+    font-family: "Karla", sans-serif;
+         }
+
 
 /* About section */
 
-body > footer > section {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+   body > footer > section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+        }
 
-body > footer > section h3 {
-  color: var(--black);
 
-  font-family: "DM Serif Display", serif;
-  font-size: 24px;
-  line-height: 1.2;
-}
+   body > footer > section h3 {
+    color: var(--black);
 
-body > footer > section ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 20px;
+    font-family: "DM Serif Display", serif;
+    font-size: 24px;
+    line-height: 1.2;
+        }
 
-  list-style: none;
-}
 
-body > footer > section li {
-  margin: 0;
-}
+  body > footer > section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
 
-body > footer > section a {
-  color: var(--darkblue);
+    list-style: none;
+        }
 
-  font-family: "Karla", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
 
-  text-decoration: none;
-}
+   body > footer > section li {
+    margin: 0;
+        }
+
+
+   body > footer > section a {
+    color: var(--darkblue);
+                            
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+            }
+
 
 /* =========================
    FOOTER COPYRIGHT & CREDITS
    ========================= */
 
-body > footer > p {
-  max-width: 280px;
+  body > footer > p {
+    max-width: 280px;
 
-  color: var(--black);
+    color: var(--black);
 
-  font-family: "Karla", sans-serif;
-  font-size: 14px;
-  line-height: 1.8;
-}
+    font-family: "Karla", sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+        }
 
-body > footer > p small {
-  font-size: inherit;
-}
+  body > footer > p small {
+    font-size: inherit;
+        }
 
-body > footer > p small br {
-  display: block;
-  content: "";
-  margin-bottom: 4px;
-}
+  body > footer > p small br {
+    display: block;
+    content: "";
+    margin-bottom: 4px;
+        }
 
+    
 /* =========================
    FOOTER LINK INTERACTIONS
    ========================= */
 
-body > footer a:hover {
-  color: var(--searchblue);
-  text-decoration: underline;
-}
+   body > footer a:hover {
+    color: var(--searchblue);
+    text-decoration: underline;
+        }
 
-body > footer a:focus-visible {
-  outline: 2px solid var(--searchblue);
-  outline-offset: 4px;
-  border-radius: 2px;
-}
+   body > footer a:focus-visible {
+    outline: 2px solid var(--searchblue);
+    outline-offset: 4px;
+    border-radius: 2px;
+   }
 
 /* =========================================================
    RESPONSIVE DESIGN - TABLET
    ========================================================= */
 
 @media (max-width: 768px) {
-  /* Header */
-  body > header {
-    width: min(100% - 30px, 700px);
-    padding: 20px 0;
-  }
 
-  /* Main content */
-  main {
-    width: min(100% - 30px, 700px);
-    margin: 0 auto;
-  }
+    /* Header */
+    body > header {
+        width: min(100% - 30px, 700px);
+        padding: 20px 0;
+    }
 
-  /* Planet profile */
-  main > article {
-    padding: 25px;
-    grid-template-columns: 110px 1fr;
-    column-gap: 25px;
-  }
+    /* Main content */
+    main {
+        width: min(100% - 30px, 700px);
+        margin: 0 auto;
+    }
 
-  main > article > img {
-    width: 95px;
-    height: 95px;
-  }
+    /* Planet profile */
+    main > article {
+        padding: 25px;
+        grid-template-columns: 110px 1fr;
+        column-gap: 25px;
+    }
 
-  /* Primary stats */
-  main > article > dl:first-of-type {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    main > article > img {
+        width: 95px;
+        height: 95px;
+    }
 
-  main > article > dl:first-of-type > div {
-    padding: 15px;
-  }
+    /* Primary stats */
+    main > article > dl:first-of-type {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-  /* Icon stats */
-  main > article > dl:nth-of-type(2) {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 15px;
-  }
+    main > article > dl:first-of-type > div {
+        padding: 15px;
+    }
 
-  main > article > dl:nth-of-type(2) > div:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--brightblue);
-    padding-bottom: 15px;
-  }
+    /* Icon stats */
+    main > article > dl:nth-of-type(2) {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 15px;
+    }
 
-  /* Footer */
-  body > footer {
-    padding: 35px 25px;
-    flex-direction: column;
-  }
+    main > article > dl:nth-of-type(2) > div:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--brightblue);
+        padding-bottom: 15px;
+    }
 
-  body > footer > p {
-    text-align: left;
-  }
+    /* Footer */
+    body > footer {
+        padding: 35px 25px;
+        flex-direction: column;
+    }
+
+    body > footer > p {
+        text-align: left;
+    }
 }
