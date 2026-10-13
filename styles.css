@@ -10,7 +10,7 @@
     box-sizing: border-box;
 }
 
-/* 2. remove default margin 
+/* 2. remove default margin
 padding is optional but i do this because of lists*/
 
 :where(:not(dialog)) {
@@ -89,7 +89,7 @@ padding is optional but i do this because of lists*/
 /* 9. textarea can only resized vertically and will grow to adjust its content */
 :where(textarea) {
     resize: vertical;
-   field-sizing: content;
+    field-sizing: content;
 }
 
 /* 10. table */
@@ -124,7 +124,7 @@ padding is optional but i do this because of lists*/
     cursor: pointer
 }
 
-/*  this will disable additional non-standard gestures such as double-tap to zoom*/
+/* this will disable additional non-standard gestures such as double-tap to zoom*/
 :where(a[href],
     area,
     button,
@@ -139,627 +139,658 @@ padding is optional but i do this because of lists*/
 
 
 
-/*MY CSS*/
+/* ---------- group css ---------- */
 
-:root{
-    
-    --darkblue:rgba(22, 75, 175, 1);
-    --brightblue:rgba(209, 227, 255, 1);
-    --white:rgba(255, 255, 255, 1);
-    --captionblue:rgba(22, 75, 175, 1);
-    --searchblue:rgba(0, 121, 255, 1);
-    --backgroundwhite:rgba(246, 248, 255, 1);
-    --black:rgba(43, 52, 66, 1); 
+
+:root {
+    --bg: #f6f8ff;
+    --card: #fefefe;
+    --panel: #f6f8ff;
+    --text: #2b3442;
+    --muted: #0f2a44;
+    --muted-ft: #4b6a9b;
+    --accent: #0079ff;
+    --accent-hover: #60abff;
+    --error: #f74646;
+    --heading: #164baf;
+    --toggle: #4b6a9b;
+    --toggle-hover: #222731;
+    --shadow: 0 1rem 1.9rem -0.6rem rgba(70, 96, 187, 0.2);
+    --focus-glow: 0 0 0 3px rgba(0, 121, 255, 0.2);
+
+    /* ---------- table ---------- */
+    --th-bg: #164baf;
+    --th-text: #ffffff;
+    --group-bg: #d1e3ff;
+    --group-text: #1b2a4a;
+    --cell-bg: #f2f7ff;
+    --cell-text: #1b2a4a;
+    --table-line: #ffffff;
+}
+
+[data-theme="dark"] {
+    --bg: #141d2f;
+    --card: #1e2a47;
+    --panel: #141d2f;
+    --text: #ffffff;
+    --muted: #90a4d4;
+    --muted-ft: #d1e3ff;
+    --heading: #ffffff;
+    --toggle: #ffffff;
+    --toggle-hover: #90a4d4;
+    --shadow: none;
+
+    --th-bg: #141d2f;
+    --th-text: #ffffff;
+    --group-bg: #94a7d9;
+    --group-text: #141d2f;
+    --cell-bg: #eaf0ff;
+    --cell-text: #212121;
+    --table-line: #ffffff;
+}
+
+/* ---------- base ---------- */
+[hidden] {
+    display: none !important;
 }
 
 
-html{
-    font-family: "karla", sans-serif;
+
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Space Mono", monospace;
+    transition: background 0.4s, color 0.4s;
 }
 
-:where(h1, h2, h3, h4, h5, h6){
-    font-family: "DM Serif Display", serif;
+.container {
+    width: min(100% - 3rem, 45.625rem);
+    margin-inline: auto;
 }
 
-/* =========================
-   PAGE FOUNDATION
-   ========================= */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
 
-   body {
-    min-height: 100vh;
-    background-color: var(--backgroundwhite);
-    color: var(--black);
-        }
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
 
 
-/* =========================
-   MAIN HEADER
-   ========================= */
 
-  body > header {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 32px 40px;
-    
+
+
+/* ---------- Header ---------- */
+.site-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-                }
-   body > header > a {
-    display: block;
-        }
+    align-items: center;
+    margin-top: 2rem;
+}
 
-  body > header > a img {
-    width: 121px;
-    height: auto;
-        }
+.logo img {
+    width: 7.5rem;
+}
+
+[data-theme="dark"] .logo img {
+    filter: invert(1);
+    /* inverted black logo -> white logo */
+}
 
 
-/* Dark mode button */
 
-  body > header > button {
+
+
+.theme-toggle {
     display: flex;
     align-items: center;
-    gap: 8px;
-    border: 0;
-    background: transparent;
-    color: var(--black);
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
+    gap: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    background: none;
+    border: none;
+    border-radius: 0.3rem;
+    color: var(--toggle);
     font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
     text-transform: uppercase;
     cursor: pointer;
-        }
 
-    body > header > button img {
-            width: 20px;
-            height: 20px;
-                }
-            
-/* =========================
-   SEARCH FORM
-   ========================= */
+    &:hover {
+        color: var(--toggle-hover);
+    }
 
-  form[role="search"] {
-    width: 100%;
-    max-width: 730px;
-    margin: 0 auto;
+    /* this gives the focus outer border */
+    &:focus-within {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+    }
+
+    &:focus-visible {
+        outline: 1px solid var(--accent);
+        outline-offset: 0;
+    }
+}
+
+/* shows the moon in light mode, the sun in dark mode */
+.icon-sun,
+[data-theme="dark"] .icon-moon {
+    display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+    display: block;
+}
+
+
+
+
+
+/* ---------- search ---------- */
+.search-bar {
     display: flex;
-    align-items: stretch;
-    gap: 10px;
-            }
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2.25rem;
+    padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+    background: var(--card);
+    /* border: 1px solid transparent; */
+    border-radius: 0.9rem;
+    box-shadow: var(--shadow);
+    transition: border-color 0.2, box-shadow 0.2s;
 
+    /* this gives the focus outer border */
+    &:focus-within {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+    }
 
-/* Search input */
+    &:has(:focus-visible) {
+        border-color: var(--accent);
+        box-shadow: var(--focus-glow);
+    }
 
-  #planet-search {
-    flex: 1;
-    min-width: 0;
-    padding: 14px 16px;
-   
-    border: 1px solid var(--brightblue);
-    border-radius: 4px;
+    /* error state: no blue ring, as in the Figma error frames */
+    &:has(input[aria-invalid="true"]) {
+        border-color: transparent;
+        box-shadow: var(--shadow);
+    }
 
-    background-color: var(--white);
-    color: var(--black);
+    input {
+        flex: 1;
+        min-width: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--muted-ft);
+        font-family: inherit;
+        font-size: 1.25rem;
 
-    font-family: "Karla", sans-serif;
-    font-size: 16px;
-    outline: none;
+        &::placeholder {
+            color: var(--muted-ft);
+            font-size: 1.2rem;
         }
+    }
+}
 
-  #planet-search::placeholder {
-    color: var(--black);
-    opacity: 0.6;
-        }
+.search-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    color: var(--accent);
+}
 
-/* Search button */
-    form[role="search"] button {
-    padding: 14px 24px;
-
-    border: 0;
-    border-radius: 4px;
-    
-    background-color: var(--searchblue);
-    color: var(--white);
-
-    font-family: "Karla", sans-serif;
-    font-size: 16px;
+.search-error {
+    color: var(--error);
+    font-size: 0.85rem;
     font-weight: 700;
+    white-space: nowrap;
+}
 
+.search-btn {
+    padding: 0.8rem 1.4rem;
+    background: var(--accent);
+    border: none;
+    border-radius: 0.6rem;
+    color: #fff;
+    font-family: inherit;
+    font-weight: 700;
     cursor: pointer;
-          }
+    transition: background 0.2s;
+
+    &:hover {
+        background: var(--accent-hover);
+    }
+
+    /* this gives the focus outer border */
+    &:focus-within {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-hover);
+        outline-offset: 2px;
+    }
+}
 
 
-/* =========================
-   PLANET PROFILE
-   ========================= */
 
-   main > article {
-    width: 100%;
-    max-width: 730px;
-    margin: 40px auto 0;
 
-    padding: 40px;
 
-    background-color: var(--white);
-    border-radius: 8px;
+/* ---------- Cards ---------- */
+.card {
+    margin-top: 1.5rem;
+    padding: 2.25rem;
+    background: var(--card);
+    border-radius: 0.9rem;
+    box-shadow: var(--shadow);
+}
 
+.planet-card {
     display: grid;
-    grid-template-columns: 117px 1fr;
-    column-gap: 32px;
-    row-gap: 24px;
-        }
+    grid-template-columns: 7.25rem 1fr;
+    column-gap: 2.25rem;
+    align-items: start;
+}
 
+.planet-image {
+    grid-row: 1 / span 4;
+    width: 7.25rem;
+    height: 7.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
-/* Planet image */
+.planet-heading h2 {
+    font-size: 1.625rem;
+    line-height: 1.2;
+}
 
-  main > article > img {
-    width: 117px;
-    height: 117px;
-    align-self: center;
-        }
+.planet-type {
+    color: var(--accent);
+    font-size: 1rem;
+}
 
+.planet-description {
+    margin: 0.75rem 0 1.25rem;
+    color: var(--muted-ft);
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
 
-/* Planet name and type */
-  main > article > header {
-    align-self: center;
-        }
-
-  main > article > header h1 {
-    color: var(--black);
-    font-size: 48px;
-    line-height: 1.1;
-        }
-
-  main > article > header p {
-    margin-top: 8px;
-
-    color: var(--darkblue);
-
-    font-family: "Karla", sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-        }
-
-
-/* Planet description */
-
-  main > article > p {
-    grid-column: 1 / -1;
-
-    color: var(--black);
-
-    font-family: "Karla", sans-serif;
-    font-size: 18px;
-    line-height: 1.5;
-        }
-
-       
- /* =========================
-   PLANET PRIMARY STATS
-   ========================= */
-
-   main > article > dl:first-of-type {
-    grid-column: 1 / -1;
-
+.planet-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--panel);
+    border-radius: 0.6rem;
 
-    border-top: 1px solid var(--brightblue);
-    border-bottom: 1px solid var(--brightblue);
-        }
-
-@media (max-width: 768px) {
-
-    header {
-        width: min(100% - 30px, 700px);
-        padding: 20px 0;
+    dt {
+        color: var(--muted-ft);
+        font-size: 0.65rem;
     }
 
-    main {
-        width: min(100% - 30px, 700px);
+    dd {
+        margin-top: 0.25rem;
+        font-size: 1rem;
+        font-weight: 700;
     }
-
-    main > article {
-        padding: 25px;
-
-        grid-template-columns: 110px 1fr;
-        column-gap: 25px;
-    }
-
-    main > article > img {
-        width: 95px;
-        height: 95px;
-    }
-
-    main > article > dl:first-of-type {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    main > article > dl:first-of-type > div {
-        padding: 15px;
-    }
-
-    main > article > dl:last-of-type {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 15px;
-    }
-
-    main > article > dl:last-of-type > div:nth-child(2) {
-        border-right: none;
-    }
-
-    main > article > dl:last-of-type > div:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--light-border);
-        padding-bottom: 15px;
-    }
-
-    body.dark-mode main > article > dl:last-of-type > div:nth-child(-n + 2) {
-        border-bottom-color: #34445c;
-    }
-
-    footer {
-        padding: 35px 25px;
-        flex-direction: column;
-    }
-
-    footer > p {
-        text-align: left;
-    }
-    }
-
-  main > article > dl:first-of-type > div {
-    padding: 20px 16px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-
-    text-align: center;
-        }
-
-
-  main > article > dl:first-of-type > div + div {
-    border-left: 1px solid var(--brightblue);
-        }
-
-
-  main > article > dl:first-of-type dt {
-    color: var(--black);
-
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-        }
-
-
-  main > article > dl:first-of-type dd {
-    color: var(--darkblue);
-
-    font-family: "Karla", sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-         }
-        
- 
-/* =========================
-   PLANET ICON STATS
-   ========================= */
-
-  main > article > dl:nth-of-type(2) {
-    grid-column: 1 / -1;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-        }
-
-
-  main > article > dl:nth-of-type(2) > div {
-    min-width: 0;
-
-    padding: 16px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-
-    text-align: center 
-         }
-
-
-  main > article > dl:nth-of-type(2) dt {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 40px;
-    height: 40px;
-
-    border-radius: 50%;
-
-    background-color: var(--brightblue);
-        }
-
-
-  main > article > dl:nth-of-type(2) dt img {
-    width: 20px;
-    height: 20px;
-    }
-
-
-  main > article > dl:nth-of-type(2) dd {
-    color: var(--black);
-
-    font-family: "Karla", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-        }
-/* =========================
-   PLANETARY FACTS SECTION
-   ========================= */
-
-  main > section {
-    width: 100%;
-    max-width: 730px;
-    margin: 64px auto 0;
-         }
-
-  main > section > h2 {
-    color: var(--black);
-    font-size: 36px;
-    line-height: 1.2;
-        }
-
-  main > section > p {
-    max-width: 650px;
-    margin-top: 12px;
-    color: var(--black);
-    font-family: "Karla", sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-   } 
-
-   
-/* =========================
-   PLANETARY FACTS TABLE
-   ========================= */
-
- main > section > table {
-    width: 100%;
-    margin-top: 32px;
-    
-    background-color: var(--white);
-    border: 1px solid var(--brightblue);
-    border-radius: 8px;
-    
-    overflow: hidden;
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
-        }
-
-
- main > section > table caption {
-    margin-bottom: 12px;
-
-    color: var(--captionblue);
-
-    font-size: 12px;
-    text-align: left;
-    }
-
-
-/* Table cells */
-
- main > section > table th,
-  main > section > table td {
-    padding: 14px 16px;
-
-    border-bottom: 1px solid var(--brightblue);
-
-    text-align: left;
-    vertical-align: middle;
-        }
-
-/* Table header */
-
-  main > section > table thead {
-    background-color: var(--brightblue);
-        }
-
-  main > section > table thead th {
-    color: var(--black);
-
-    font-weight: 700;
-        }
-
-
-/* Table body */
-
-  main > section > table tbody th {
-    color: var(--black);
-    font-weight: 700;
-  }               
-
-
-  main > section > table tbody td {
-    color: var(--black);
-        }
-
-
-/* Remove the final bottom border */
-
-  main > section > table tbody tr:last-child th,
-   main > section > table tbody tr:last-child td {
-    border-bottom: 0;
 }
-    
-  
-/* =========================
-   FOOTER
-   ========================= */
 
-  body > footer {
-    width: 100%;
-    max-width: 730px;
-    margin: 80px auto 0;
-    padding: 48px 0 32px;
-
-    border-top: 1px solid var(--brightblue);
-
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
-
-    font-family: "Karla", sans-serif;
-         }
-
-
-/* About section */
-
-   body > footer > section {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-        }
-
-
-   body > footer > section h3 {
-    color: var(--black);
-
-    font-family: "DM Serif Display", serif;
-    font-size: 24px;
-    line-height: 1.2;
-        }
-
-
-  body > footer > section ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 20px;
-
+.planet-extras {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2rem;
+    margin-top: 1.5rem;
     list-style: none;
-        }
 
-
-   body > footer > section li {
-    margin: 0;
-        }
-
-
-   body > footer > section a {
-    color: var(--darkblue);
-                            
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-
-    text-decoration: none;
-            }
-
-
-/* =========================
-   FOOTER COPYRIGHT & CREDITS
-   ========================= */
-
-  body > footer > p {
-    max-width: 280px;
-
-    color: var(--black);
-
-    font-family: "Karla", sans-serif;
-    font-size: 14px;
-    line-height: 1.8;
-        }
-
-  body > footer > p small {
-    font-size: inherit;
-        }
-
-  body > footer > p small br {
-    display: block;
-    content: "";
-    margin-bottom: 4px;
-        }
-
-    
-/* =========================
-   FOOTER LINK INTERACTIONS
-   ========================= */
-
-   body > footer a:hover {
-    color: var(--searchblue);
-    text-decoration: underline;
-        }
-
-   body > footer a:focus-visible {
-    outline: 2px solid var(--searchblue);
-    outline-offset: 4px;
-    border-radius: 2px;
-   }
-
-/* =========================================================
-   RESPONSIVE DESIGN - TABLET
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    /* Header */
-    body > header {
-        width: min(100% - 30px, 700px);
-        padding: 20px 0;
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
     }
 
-    /* Main content */
-    main {
-        width: min(100% - 30px, 700px);
-        margin: 0 auto;
+    .icon {
+        color: var(--text);
     }
 
-    /* Planet profile */
-    main > article {
-        padding: 25px;
-        grid-template-columns: 110px 1fr;
-        column-gap: 25px;
+    strong {
+        color: var(--muted-ft);
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+}
+
+.status-card {
+    text-align: center;
+
+    h2 {
+        font-size: 1rem;
     }
 
-    main > article > img {
-        width: 95px;
-        height: 95px;
+    p {
+        max-width: 28rem;
+        margin: 0.75rem auto 0;
+        color: var(--muted);
+        font-size: 0.75rem;
+        line-height: 1.6;
+    }
+}
+
+
+
+
+
+/* ---------- Facts Table ---------- */
+.facts {
+    margin-top: 2.5rem;
+    font-family: "karla", sans-serif;
+
+    h2 {
+        color: var(--heading);
+        font-size: 2rem;
+        font-weight: 700;
     }
 
-    /* Primary stats */
-    main > article > dl:first-of-type {
-        grid-template-columns: repeat(3, 1fr);
+    >p {
+        margin-top: 0.5rem;
+        color: var(--muted);
+        font-size: 1.125rem;
     }
+}
 
-    main > article > dl:first-of-type > div {
-        padding: 15px;
-    }
+.table-wrap {
+    margin-top: 1.5rem;
+    overflow-x: auto;
+}
 
-    /* Icon stats */
-    main > article > dl:nth-of-type(2) {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 15px;
-    }
+.planet-table {
+    /* --radius: 1rem */
+    width: 100%;
+    font-size: 0.85rem;
+    text-align: center;
+    border-collapse: separate;
+    border-spacing: 0;
+    /* border: 1px solid var(--table-line); */
+    /* border-radius: 0.6rem; */
+    /* overflow: hidden; */
 
-    main > article > dl:nth-of-type(2) > div:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--brightblue);
-        padding-bottom: 15px;
-    }
-
-    /* Footer */
-    body > footer {
-        padding: 35px 25px;
-        flex-direction: column;
-    }
-
-    body > footer > p {
+    caption {
+        margin-bottom: 0.75rem;
+        border: 0;
+        color: var(--text);
+        font-size: 1.125rem;
+        font-weight: 700;
         text-align: left;
+    }
+
+    th,
+    td {
+        padding: 0.9rem 0.5rem;
+        border-bottom: 1px solid var(--table-line);
+        border-right: 1px solid var(--table-line);
+        border-left: 1px solid var(--table-line);
+        border-top: 1px solid var(--table-line);
+    }
+
+    thead th {
+        background: var(--th-bg);
+        color: var(--th-text);
+        font-size: 1rem;
+        /* border-radius: 1rem 1rem 0 0; */
+    }
+
+    .group {
+        background: var(--group-bg);
+        color: var(--group-text);
+        font-size: 1rem;
+        font-weight: 900;
+    }
+
+    tbody th[scope="row"],
+    td {
+        background: var(--cell-bg);
+        color: var(--cell-text);
+        font-weight: 700;
+    }
+
+    /* no stray lines on the outer right and bottom edges */
+    /* tr > :last-child { border-right: 0; }
+tbody tr:last-child { border-bottom: 0; } */
+
+    /* rounded outer corners on the four corner cells */
+    /* thead tr:first-child > :first-child { border-top-left-radius: var(--radius); }
+thead tr:first-child > :last-child { border-top-right-radius: var(--radius); }
+tbody tr:last-child > :first-child { border-bottom-left-radius: var(--radius); }
+tbody tr:last-child > :last-child { border-bottom-right-radius: var(--radius); } */
+}
+
+/* Table Border Radius */
+thead th:first-child {
+    border-top-left-radius: 1rem;
+}
+
+thead th:last-child {
+    border-top-right-radius: 1rem;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 1rem;
+    /* all four corners */
+    overflow: hidden;
+    /* clips cell backgrounds to the curve */
+}
+
+
+
+
+
+/* ---------- Footer Section ---------- */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-block: 3rem 2.5rem;
+    color: var(--muted-ft);
+    font-family: inter, sans-serif;
+    font-size: 1rem;
+    margin-bottom: 7rem;
+    
+    
+    h2 {
+        margin-bottom: 1rem;
+        color: var(--muted-ft);
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .credits {
+        line-height: 1.7;
+        font-weight: 700;
+    }
+
+    a {
+        color: var(--muted-ft);
+        text-decoration: none;
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--accent-hover);
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+
+
+/* ---------- Mobile Query ---------- */
+@media (max-width: 30rem) {
+    .container {
+        width: min(100% - 2rem, 45.625rem);
+    }
+
+
+
+
+
+    /* ---------- Search Bar ---------- */
+    .search-bar {
+        margin-bottom: 2rem;
+
+        input::placeholder {
+            font-size: 0.8125rem;
+            text-overflow: ellipsis;
+        }
+    }
+
+
+
+
+
+    /* ---------- Planet Card ---------- */
+    .card {
+        padding: 1.5rem;
+
+        p {
+            padding-top: 0.7rem;
+            color: var(--muted-ft);
+            font-size: 0.937rem;
+            font-weight: 400;
+        }
+    }
+
+    .planet-card {
+        grid-template-columns: 4.5rem 1fr;
+        column-gap: 1.25rem;
+        align-items: center;
+    }
+
+    .planet-image {
+        grid-row: auto;
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .planet-heading p {
+        font-size: 1rem;
+        color: var(--accent);
+        margin-top: -0.5rem;
+    }
+
+    .planet-description,
+    .planet-stats,
+    .planet-extras {
+        grid-column: 1 / -1;
+    }
+
+    .planet-stats {
+        grid-template-columns: 1fr;
+
+    }
+
+    .planet-stats dt {
+        font-size: 0.8rem;
+    }
+
+    .planet-stats dd {
+        font-size: 1.375rem;
+    }
+
+
+    /* Planet Extra */
+    .planet-extras {
+        grid-template-columns: 1fr;
+
+        strong {
+            font-size: 0.94rem;
+        }
+    }
+
+    .search-error {
+        font-size: 0.7rem;
+    }
+
+    .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+
+
+
+
+    /* ---------- Facts ---------- */
+    .facts h2 {
+        font-size: 2rem;
+        text-wrap: inherit;
+    }
+
+
+    .caption-extra {
+        display: none;
+    }
+
+
+
+
+
+    /* ---------- Planet Table ---------- */
+    .planet-table thead th {
+        font-size: 0.6rem;
+    }
+
+    .planet-table .group {
+        font-size: 0.6rem;
+    }
+
+    .planet-table tbody th:not(.group) {
+        font-size: 0.6rem;
+    }
+
+    .planet-table td:last-child {
+        font-size: 0.7rem;
+    }
+
+    .col-mass {
+        display: none;
+    }
+
+
+
+
+
+    /* ---------- Footer Section ---------- */
+    .site-footer {
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
     }
 }
