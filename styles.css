@@ -86,11 +86,11 @@ border-collapse: collapse;
     }
 
 :where(pre) {
-    direction: ltr;
-    max-inline-size: max-content;
-    min-inline-size: 0;
-    white-space: pre;
-    writing-mode: lr
+direction: ltr;
+max-inline-size: max-content;
+min-inline-size: 0;
+white-space: pre;
+writing-mode: lr
 }
 
 :where(a[href],
@@ -638,6 +638,12 @@ line-height: 1.6;
 }
 }
 
+.group {
+background: var(--group-bg);
+color: var(--group-text);
+font-size: 1rem;
+font-weight: 900;
+}
 
 /* ---------- Facts Table ---------- */
 
