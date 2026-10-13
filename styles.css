@@ -56,7 +56,6 @@ overflow-wrap: break-word;
 }
 
 
-
 /* 7. making media elements block-level */
 :where(img, svg, video, canvas, picture, audio, iframe, embed, object) {
 display: block
