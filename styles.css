@@ -76,8 +76,8 @@ letter-spacing: inherit
 
 /* 9. textarea can only resized vertically and will grow to adjust its content */
 :where(textarea) {
-resize: vertical;
-field-sizing: content;
+    resize: vertical;
+    field-sizing: content;
 }
 
 /* 10. table */
@@ -87,88 +87,291 @@ border-collapse: collapse;
     }
 
 :where(pre) {
-direction: ltr;
-max-inline-size: max-content;
-min-inline-size: 0;
-white-space: pre;
-writing-mode: lr
-  }
-
-:where(a[href], area, button, input:not([type=text], [type=email], [type=number], 
-       [type=password], [type=""], [type=tel], [type=url]),
-       label[for], select, summary, [tabindex]:not([tabindex*="-"], pre)) {
-cursor: pointer
-    }
-
-/* this will disable additional non-standard gestures such as double-tap to zoom*/
-
-:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
-touch-action: manipulation
+    direction: ltr;
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+    writing-mode: lr
 }
 
- 
+:where(a[href],
+    area,
+    button,
+    input:not([type=text],
+        [type=email],
+        [type=number],
+        [type=password],
+        [type=""],
+        [type=tel],
+        [type=url]),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*="-"],
+        pre)) {
+    cursor: pointer
+}
+
+/* this will disable additional non-standard gestures such as double-tap to zoom*/
+:where(a[href],
+    area,
+    button,
+    input,
+    label[for],
+    select,
+    summary,
+    textarea,
+    [tabindex]:not([tabindex*="-"])) {
+    touch-action: manipulation
+}
+
+
 
 /* ---------- group css ---------- */
 
+
 :root {
---bg: #f6f8ff;
---card: #fefefe;
---panel: #f6f8ff;
---text: #2b3442;
---muted: #0f2a44;
---muted-ft: #4b6a9b;
---accent: #0079ff;
---accent-hover: #60abff;
---error: #f74646;
---heading: #164baf;
---toggle: #4b6a9b;
---toggle-hover: #222731;
---shadow: 0 1rem 1.9rem -0.6rem rgba(70, 96, 187, 0.2);
---focus-glow: 0 0 0 3px rgba(0, 121, 255, 0.2);
+    --bg: #f6f8ff;
+    --card: #fefefe;
+    --panel: #f6f8ff;
+    --text: #2b3442;
+    --muted: #0f2a44;
+    --muted-ft: #4b6a9b;
+    --accent: #0079ff;
+    --accent-hover: #60abff;
+    --error: #f74646;
+    --heading: #164baf;
+    --toggle: #4b6a9b;
+    --toggle-hover: #222731;
+    --shadow: 0 1rem 1.9rem -0.6rem rgba(70, 96, 187, 0.2);
+    --focus-glow: 0 0 0 3px rgba(0, 121, 255, 0.2);
 
-
-/* ---------- table ---------- */
---th-bg: #164baf;
---th-text: #ffffff;
---group-bg: #d1e3ff;
---group-text: #1b2a4a;
---cell-bg: #f2f7ff;
---cell-text: #1b2a4a;
---table-line: #ffffff;
+    /* ---------- table ---------- */
+    --th-bg: #164baf;
+    --th-text: #ffffff;
+    --group-bg: #d1e3ff;
+    --group-text: #1b2a4a;
+    --cell-bg: #f2f7ff;
+    --cell-text: #1b2a4a;
+    --table-line: #ffffff;
 }
 
 [data-theme="dark"] {
---bg: #141d2f;
---card: #1e2a47;
---panel: #141d2f;
---text: #ffffff;
---muted: #90a4d4;
---muted-ft: #d1e3ff;
---heading: #ffffff;
---toggle: #ffffff;
---toggle-hover: #90a4d4;
---shadow: none;
+    --bg: #141d2f;
+    --card: #1e2a47;
+    --panel: #141d2f;
+    --text: #ffffff;
+    --muted: #90a4d4;
+    --muted-ft: #d1e3ff;
+    --heading: #ffffff;
+    --toggle: #ffffff;
+    --toggle-hover: #90a4d4;
+    --shadow: none;
 
---th-bg: #141d2f;
---th-text: #ffffff;
---group-bg: #94a7d9;
---group-text: #141d2f;
---cell-bg: #eaf0ff;
---cell-text: #212121;
---table-line: #ffffff;
+    --th-bg: #141d2f;
+    --th-text: #ffffff;
+    --group-bg: #94a7d9;
+    --group-text: #141d2f;
+    --cell-bg: #eaf0ff;
+    --cell-text: #212121;
+    --table-line: #ffffff;
 }
 
 /* ---------- base ---------- */
 [hidden] {
-display: none !important;
+    display: none !important;
 }
 
+
+
+
 body {
-background-color: var(--bg);
-color: var(--text);
-font-family: "Space Mono", monospace;
-transition: background 0.4s, color 0.4s;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Space Mono", monospace;
+    transition: background 0.4s, color 0.4s;
 }
+
+.container {
+    width: min(100% - 3rem, 45.625rem);
+    margin-inline: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+
+
+
+
+/* ---------- Header ---------- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.logo img {
+    width: 7.5rem;
+}
+
+[data-theme="dark"] .logo img {
+    filter: invert(1);
+    /* inverted black logo -> white logo */
+}
+
+
+
+
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    background: none;
+    border: none;
+    border-radius: 0.3rem;
+    color: var(--toggle);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--toggle-hover);
+    }
+
+    /* this gives the focus outer border */
+    &:focus-within {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+    }
+
+    &:focus-visible {
+        outline: 1px solid var(--accent);
+        outline-offset: 0;
+    }
+}
+
+/* shows the moon in light mode, the sun in dark mode */
+.icon-sun,
+[data-theme="dark"] .icon-moon {
+    display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+    display: block;
+}
+
+
+
+
+
+/* ---------- search ---------- */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 2.25rem;
+    padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+    background: var(--card);
+    /* border: 1px solid transparent; */
+    border-radius: 0.9rem;
+    box-shadow: var(--shadow);
+    transition: border-color 0.2, box-shadow 0.2s;
+
+    /* this gives the focus outer border */
+    &:focus-within {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+    }
+
+    &:has(:focus-visible) {
+        border-color: var(--accent);
+        box-shadow: var(--focus-glow);
+    }
+
+    /* error state: no blue ring, as in the Figma error frames */
+    &:has(input[aria-invalid="true"]) {
+        border-color: transparent;
+        box-shadow: var(--shadow);
+    }
+
+    input {
+        flex: 1;
+        min-width: 0;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--muted-ft);
+        font-family: inherit;
+        font-size: 1.25rem;
+
+        &::placeholder {
+            color: var(--muted-ft);
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.search-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+.search-error {
+    color: var(--error);
+    font-size: 0.85rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.search-btn {
+    padding: 0.8rem 1.4rem;
+    background: var(--accent);
+    border: none;
+    border-radius: 0.6rem;
+    color: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+        background: var(--accent-hover);
+    }
+
+    /* this gives the focus outer border */
+    &:focus-within {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--accent-hover);
+        outline-offset: 2px;
+    }
+}
+
+
+
 
 .container {
 width: min(100% - 3rem, 45.625rem);
@@ -190,6 +393,13 @@ height: 1.25rem;
 flex-shrink: 0;
 }
 
+.planet-image {
+    grid-row: 1 / span 4;
+    width: 7.25rem;
+    height: 7.25rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
 
 /* ---------- Header ---------- */
