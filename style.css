@@ -44,7 +44,7 @@ padding is optional but i do this because of lists*/
     text-wrap: pretty;
 }
 
-:where(figure) > :where(figcaption) {
+:where(figure)> :where(figcaption) {
     text-wrap: balance;
 }
 
@@ -89,30 +89,25 @@ padding is optional but i do this because of lists*/
     writing-mode: lr;
 }
 
-:where(
-    a[href],
+:where(a[href],
     area,
     button,
-    input:not(
-        [type="text"],
+    input:not([type="text"],
         [type="email"],
         [type="number"],
         [type="password"],
         [type=""],
         [type="tel"],
-        [type="url"]
-    ),
+        [type="url"]),
     label[for],
     select,
     summary,
-    [tabindex]:not([tabindex*="-"], pre)
-) {
+    [tabindex]:not([tabindex*="-"], pre)) {
     cursor: pointer;
 }
 
 /* this will disable additional non-standard gestures such as double-tap to zoom*/
-:where(
-    a[href],
+:where(a[href],
     area,
     button,
     input,
@@ -120,8 +115,7 @@ padding is optional but i do this because of lists*/
     select,
     summary,
     textarea,
-    [tabindex]:not([tabindex*="-"])
-) {
+    [tabindex]:not([tabindex*="-"])) {
     touch-action: manipulation;
 }
 
@@ -489,7 +483,7 @@ body {
         font-weight: 700;
     }
 
-    > p {
+    >p {
         margin-top: 0.5rem;
         color: var(--muted);
         font-size: 1.125rem;
@@ -582,8 +576,10 @@ tbody tr:last-child td:first-child {
 table {
     border-collapse: separate;
     border-spacing: 0;
-    border-radius: 1rem;  /* all four corners */
-    overflow: hidden;  /* clips cell backgrounds to the curve */
+    border-radius: 1rem;
+    /* all four corners */
+    overflow: hidden;
+    /* clips cell backgrounds to the curve */
 }
 
 
@@ -769,7 +765,7 @@ table {
 
 
 
-    
+
 
     /* ---------- Footer Section ---------- */
     .site-footer {
