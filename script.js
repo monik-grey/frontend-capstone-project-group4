@@ -23,21 +23,21 @@ toggleBtn.addEventListener("click", () => {
 
 /// ===== Start =====
 async function init() {
-    try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        planets = await response.json();
+  try {
+    const response = await fetch(API_URL);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    planets = await response.json();
 
-        renderTable();
-        const earth = planets.find((p) => p.name === "Earth");
-        if (earth) showPlanet(earth); // the design opens on Earth
-    } catch (error) {
-        console.error("Could not load planets:", error);
-        showStatus(
-            "Couldn't load planet data",
-            "Check your connection and refresh the page.",
-        );
-    }
+    renderTable();
+    const earth = planets.find((p) => p.name === "Earth");
+    if (earth) showPlanet(earth); // the design opens on Earth
+  } catch (error) {
+    console.error("Could not load planets:", error);
+    showStatus(
+      "Couldn't load planet data",
+      "Check your connection and refresh the page.",
+    );
+  }
 }
 
 init();
