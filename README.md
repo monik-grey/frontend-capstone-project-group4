@@ -266,6 +266,7 @@ The team lead is responsible for:
 
 The project is being developed collaboratively by nine team members. Each member has an assigned area of responsibility, with additional collaboration where components depend on one another.
 
+FIRST NAME (LINKED TO GITHUB PROFILE LINK):
 
 ### 1. [OSAMEDE](https://github.com/monik-grey)
 
