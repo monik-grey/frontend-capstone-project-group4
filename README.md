@@ -16,7 +16,7 @@ This project demonstrates the practical application of frontend development, API
 
 ## LIVE DEMO AND REPOSITORY LINKS:
 
-**Live Application:** [Add the deployed website URL]
+**Live Application:** [https://planetexplorercapstonegroup4.netlify.app/]
 **GitHub Repository:** [https://github.com/monik-grey/frontend-capstone-project-group4.git]
 
 
@@ -476,7 +476,7 @@ The following were verified before the final deployment:
 
 The completed application must be deployed to a public hosting platform, such as Netlify or Vercel.
 
-**Live Application:** [Add the deployed website URL]
+**Live Application(Netlify):** [https://planetexplorercapstonegroup4.netlify.app/]
 
 **GitHub Repository:** [https://github.com/monik-grey/frontend-capstone-project-group4.git]
 
