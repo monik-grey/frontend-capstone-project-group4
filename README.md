@@ -268,147 +268,18 @@ The project is being developed collaboratively by nine team members. Each member
 
 FIRST NAME (LINKED TO GITHUB PROFILE LINK):
 
-### 1. [OSAMEDE](https://github.com/monik-grey)
+| S/N | Team Member's Name | GitHub Profile Link | Assigned Role | Contribution | Primary Deliverables |
+|:---:|---|---|---|---|---|
+| 1 | [OSAMEDE](https://github.com/monik-grey) | [monik-grey](https://github.com/monik-grey) | Team Lead / Project Coordinator | Coordinated the team, established project guidelines, managed the GitHub repository, added collaborators, delegated tasks, monitored progress, configured the main branch, oversaw pull request reviews, maintained documentation, resolved integration issues, collaborated with the JavaScript team on corrections, and coordinated final testing and deployment. | Project coordination, repository management, team collaboration, code integration, README documentation, testing, and release oversight. |
+| 2 | [MARK-ANTHONY](https://github.com/EMPRINTNATION) | [EMPRINTNATION](https://github.com/EMPRINTNATION) | Assistant Team Lead / JavaScript Developer | Supported team coordination, implemented JavaScript functionality for the planetary statistics table and planet card, collaborated with the HTML and CSS team on corrections, resolved integration issues, monitored assigned tasks, and supported the agreed Git workflow. | JavaScript functionality for the planetary statistics table and planet card, cross-team code corrections, and assistant team leadership. |
+| 3 | [JOSHUA](https://github.com/barristerInTech) | [barristerInTech](https://github.com/barristerInTech) | HTML Structure Developer | Developed and organized the application's HTML structure, including the header, main content, planetary information, statistics, and footer, ensuring compatibility with CSS styling and JavaScript functionality. | Complete HTML structure of the Planet Explorer application. |
+| 4 | [THELMA](https://github.com/Thelma-dot88) | [Thelma-dot88](https://github.com/Thelma-dot88) | Desktop CSS Developer | Implemented desktop styling for the layout, typography, spacing, sizing, and alignment of the main sections. Styled the planetary information and statistics to match the provided Figma design and collaborated on visual consistency. | Desktop CSS styling for the application, excluding the desktop footer. |
+| 5 | [FATIMA](https://github.com/teemaa876) | [teemaa876](https://github.com/teemaa876) | Desktop Footer Developer | Implemented and styled the desktop footer, including its content, links, spacing, and alignment, in accordance with the design specifications and the application's overall visual style. | Desktop footer styling and visual implementation. |
+| 6 | [AUGUSTINA](https://github.com/augustinaakintewe-max) | [augustinaakintewe-max](https://github.com/augustinaakintewe-max) | Responsive Design Developer | Implemented mobile and tablet CSS media queries, adjusted layouts and spacing for smaller screens, and collaborated with the other responsive developer to maintain consistency across viewports. | Mobile and tablet responsive layouts and media queries. |
+| 7 | [CHISOM](https://github.com/ChisomWeb) | [ChisomWeb](https://github.com/ChisomWeb) | Responsive Design Developer | Worked on mobile and tablet media queries, refined component sizing, positioning, spacing, and alignment, and collaborated with Augustina to improve readability and visual consistency across devices. | Mobile and tablet responsive styling in collaboration with Augustina. |
+| 8 | [HABEEB](https://github.com/Badboyvado) | [Badboyvado](https://github.com/Badboyvado) | Theme Toggle JavaScript Developer | Implemented the JavaScript functionality for switching between light and dark themes, connected the toggle control to the application's theme behavior, and ensured the interface responded to theme changes. | JavaScript functionality for the light and dark theme toggle. |
+| 9 | [ADEOLUWA](https://github.com/Crown-great02) | [Crown-great02](https://github.com/Crown-great02) | Default Planet Display and Error Handling Developer | Implemented the default planet display on application load, presented the initial planetary information, and added error handling to display appropriate messages when the default planet information could not be loaded. | Default planet display and error-handling functionality. |
 
-**Role:** Team Lead / Project Coordinator
-
-**Responsibilities and contributions:**
-
-- Coordinated the team and established project ground rules.
-- Created and maintained the public GitHub repository.
-- Added all team members as repository collaborators.
-- Appointed and coordinated with the assistant team lead.
-- Distributed tasks and monitor team progress.
-- Ensured that work is completed to the agreed standard.
-- Reviewed project integration and resolved collaboration issues.
-- Configured the main branch.
-- Ensured that pull requests are reviewed and approved by someone other than their author.
-- Maintained the README and ensure the project is properly documented.
-- Worked alongside with the javascript team and reviewed the corrections
-- Coordinated final testing and deployment.
-
-**Primary deliverables:** Project coordination, repository management, documentation, code integration, and release oversight.
-
-
-### 2. [MARK-ANTHONY](https://github.com/EMPRINTNATION)
-
-**Role:** Assistant Team Lead / Javascript Developer
-
-**Responsibilities and contributions:**
-
-- Supported the team lead in coordinating project activities.
-- Implemented the JavaScript functionality for the planetary statistics table.
-- Developed the JavaScript functionality for the planet card and its dynamic content display.
-- Collaborated with the HTML and CSS team members to identify and implement corrections.
-- Assisted in resolving integration issues between HTML structure, CSS styling, and JavaScript
-  functionality.
-- Monitored assigned tasks and follow up on progress.
-- Assisted with resolving blockers and coordinating dependencies.
-- Helped maintained the agreed Git workflow.
-- Implemented the assigned frontend components.
-- Assisted with reviewing team contributions when authorized.
-
-**Primary deliverables:** JavaScript functionality for the planetary statistics table and planet card, cross-team code corrections, and assistant team leadership.
-
-### 3. [JOSHUA](https://github.com/barristerInTech)
-
-**Role:** HTML structure developer
-
-**Responsibilities and contributions:**
-
-- Developed the overall HTML structure of the application.
-- Organized the page content using appropriate HTML elements.
-- Structured the header, main content, planetary information, statistics, and footer.
-- Ensured that the HTML structure supported the implementation of the CSS and JavaScript features.
-
-**Primary deliverables:** Complete HTML structure of the Planet Explorer application.
-
-
-### 4. [THELMA](https://github.com/Thelma-dot88)
-
-**Role:** Desktop CSS Developer
-
-**Responsibilities and contributions:**
-
-- Implemented the desktop styling of the application.
-- Styled the layout, typography, spacing, sizing, and alignment of the main sections.
-- Worked on the visual presentation of the planetary information and statistics.
-- Ensured the desktop interface closely followed the provided Figma design.
-- Collaborated with the footer developer to maintain visual consistency.
-
-**Primary deliverables:** Desktop CSS styling for the application, excluding the desktop footer.
-
-
-### 5. [FATIMA](https://github.com/teemaa876)
-
-**Role:** Desktop Footer Developer
-
-**Responsibilities and contributions:**
-
-- Implemented the footer layout for the desktop view.
-- Styled the footer content, links, spacing, and alignment.
-- Ensured the footer followed the supplied design specifications.
-- Maintained consistency between the footer and the rest of the desktop interface.
-
-**Primary deliverables:** Desktop footer structure styling and visual implementation.
-
-
-### 6. [AUGUSTINA](https://github.com/augustinaakintewe-max)
-
-**Role:** Responsive Design Developer
-
-**Responsibilities and contributions:**
-
-- Implemented responsive CSS media queries for mobile and tablet devices.
-- Adjusted layouts and spacing to suit smaller screen sizes.
-- Worked on adapting the desktop design to the specified mobile and tablet layouts.
-- Collaborated with the other responsive design developer to ensure consistent behavior across 
-  viewports.
-
-**Primary deliverables:** Mobile and tablet responsive layouts and media queries.
-
-
-### 7. [CHISOM](https://github.com/ChisomWeb)
-
-**Role:** Responsive Design Developer
-
-**Responsibilities and contributions:**
-
-- Worked on mobile and tablet CSS media queries.
-- Adjusted component sizing, positioning, spacing, and alignment for smaller screens.
-- Helped ensure that the application remained readable and visually consistent across devices.
-- Collaborated with Augustina to implement and refine the responsive layouts.
-
-**Primary deliverables:** Mobile and tablet responsive styling in collaboration with Augustina.
-
-
-### 8. [HABEEB](https://github.com/Badboyvado)
-
-**Role:** Theme Toggle JavaScript Developer
-
-**Responsibilities and contributions:**
-
-- Implemented the JavaScript functionality for switching between light and dark themes.
-- Connected the theme toggle control to the application's theme behavior.
-- Ensured that users could switch between the two appearances.
-- Worked on the interaction between the theme toggle and the application's visual presentation.
-
-**Primary deliverables:** JavaScript functionality for the light and dark theme toggle.
-
-
-### 9. [ADEOLUWA](https://github.com/Crown-great02)
-
-**Role:** Default Planet Display and Error Handling Developer
-
-**Responsibilities and contributions:**
-
-- Implemented the default planet display when the application loads.
-- Worked on presenting the initial planetary information.
-- Implemented error handling for cases where the default planet fails to load.
-- Ensured that an appropriate error message is displayed when the default planet information 
-  cannot be loaded.
-
-**Primary deliverables:** Test results, bug reports, quality checks, and deployment verification.
 
 
 ### Other team members who contributed nothing to the project
